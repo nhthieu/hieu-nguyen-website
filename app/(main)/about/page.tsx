@@ -48,12 +48,12 @@ function AboutPage() {
               <LinkArrow className='w-6 ml-2' />
             </Link>
             <Link
-                href='mailto:nguyenhotrunghieu0106@gmail.com'
-                target='_blank'
-                className='text-lg font-semibold capitalize text-light underline md:text-lg'
-              >
-                Email me
-              </Link>
+              href='mailto:nguyenhotrunghieu0106@gmail.com'
+              target='_blank'
+              className='text-lg font-semibold capitalize text-light underline md:text-lg'
+            >
+              Email me
+            </Link>
           </div>
         </div>
       </section>

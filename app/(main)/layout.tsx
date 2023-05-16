@@ -7,7 +7,7 @@ export default function Layout({
 }) {
   return (
     <>
-      <Header />
+      <Header arrowBackTo="/" />
       <main>{children}</main>
     </>
   );

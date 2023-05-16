@@ -53,5 +53,7 @@ module.exports = {
       xs: { max: '479px'},
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

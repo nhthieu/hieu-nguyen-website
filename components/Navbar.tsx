@@ -15,8 +15,8 @@ function Navbar({ }: Props) {
     >
       <Link href='/about' className="mx-4 font-sm hover:text-light transition ease duration-300"> About </Link>
       <Link href='/projects' className="mx-4 font-sm hover:text-light transition ease duration-300">Projects</Link>
-      <Link href='/blog' className="mx-4 font-sm hover:text-light transition ease duration-300">Blog</Link>
       <Link href='/contact' className="mx-4 font-sm hover:text-light transition ease duration-300">Contact</Link>
+      <Link href='/blog' className="mx-4 font-sm hover:text-light transition ease duration-300">Blog</Link>
     </motion.nav>
   )
 }

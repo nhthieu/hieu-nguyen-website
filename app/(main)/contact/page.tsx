@@ -19,12 +19,12 @@ function ContactPage() {
           className='col-span-1'
           name='Email'
           info="nhthieu0106@gmail.com"
-          href="mailto:nguyenhotrunghieu0106@gmail.com"
+          href="mailto:nhthieu0106@gmail.com"
         />
         <ContactItem
           className='col-span-1'
           name='Github'
-          info="nthieu"
+          info="nhthieu"
           href="https://www.github.com/nhthieu"
         />
       </div>

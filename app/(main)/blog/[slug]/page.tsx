@@ -3,6 +3,10 @@
 
 // }
 
+export const metadata = {
+  title: "Hieu Nguyen - Blog",
+  description: `Hieu Nguyen's Portfolio`,
+}
 
 type Props = {
   params: {

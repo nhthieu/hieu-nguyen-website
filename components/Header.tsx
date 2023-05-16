@@ -25,7 +25,7 @@ function Header({ className }: Props) {
   return (
     <header className={`${className} flex items-center justify-between w-screen py-8 fixed left-0 top-0 px-40 font-medium z-30 ${isScrolled ? "border-b border-solid border-light/10 backdrop-blur-md" : ""}`}>
       <Link href="/">
-        <ArrowBackIcon className="fill-light/75 w-8 hover:fill-light transition duration-300 ease-out" />
+        <ArrowBackIcon className="fill-light/75 w-[1.5em] hover:fill-light transition duration-300 ease-out" />
       </Link>
 
       <nav className='flex items-center justify-between lg:hidden text-light/75' >

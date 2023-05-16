@@ -7,8 +7,10 @@ export default function Layout({
 }) {
   return (
     <>
-      <Header arrowBackTo="/" />
-      <main>{children}</main>
+      <Header />
+      <main className="px-48 pt-44">
+        {children}
+      </main>
     </>
   );
 }

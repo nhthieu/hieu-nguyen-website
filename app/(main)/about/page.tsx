@@ -20,15 +20,16 @@ export const metadata = {
 
 function AboutPage() {
   return (
-    <div className='w-full flex flex-col items-center justify-between py-40'>
-      <section id="about" className="w-full flex justify-between space-x-32">
+    <div className='w-full flex flex-col items-center justify-between pb-40'>
+      <section id="about" className="w-full flex justify-between space-x-20">
         <div className='w-full h-auto'>
           <Image src={profilePic} alt='My Profile Picture' priority className='w-full h-auto object-cover' />
         </div>
 
         <div className="flex flex-col items-start justify-start">
-          <div className="mb-12">
-            <Logo className="w-28" />
+          <div className="mb-8">
+            {/* <Logo className="w-28" /> */}
+            <h1 className="font-medium text-lg text-light/75 uppercase">About me</h1>
           </div>
           <p className='my-4 font-medium text-light'>{para1}</p>
           <p className='my-4 font-medium text-light'>{para2}</p>
@@ -48,12 +49,12 @@ function AboutPage() {
               <LinkArrow className='w-6 ml-2' />
             </Link>
             <Link
-              href='mailto:nguyenhotrunghieu0106@gmail.com'
-              target='_blank'
-              className='text-lg font-semibold capitalize text-light underline md:text-lg'
-            >
-              Email me
-            </Link>
+                href='mailto:nguyenhotrunghieu0106@gmail.com'
+                target='_blank'
+                className='text-lg font-semibold capitalize text-light underline md:text-lg'
+              >
+                Email me
+              </Link>
           </div>
         </div>
       </section>

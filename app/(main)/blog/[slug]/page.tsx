@@ -48,16 +48,18 @@ function BlogContentPage({ params }: Props) {
   const post = getPostContent(slug);
 
   return (
-    <div className='w-full min-h-screen py-32 pb-64'>
-      <div className="w-[80%] mx-auto">
+    <div className='w-full min-h-screen pb-64'>
+      <div className="max-w-[80%] mx-auto">
         <Link href="/blog">
-          <ArrowBackIcon className="fill-light/75 w-7 h-auto hover:fill-light transition duration-300 ease-out" />
+          <div className="w-6">
+            <ArrowBackIcon className="fill-light/75  hover:fill-light transition duration-300 ease-out" />
+          </div>
         </Link>
-        <div className="flex flex-col items-center mb-20 mt-24 w-full">
+        <div className="flex flex-col items-center mb-20 mt-16 w-full">
           <h1 className="text-5xl font-bold mb-6 text-center">{post.data.title}</h1>
           <p className="text-light/75 text-lg text-center">{post.data.date}</p>
         </div>
-        <article className="prose-base prose-pre:bg-light/10 prose-headings:font-bold mx-auto prose-a:underline prose-a:font-medium">
+        <article className="prose-base prose-pre:bg-light/10 prose-pre:text-light prose-headings:font-bold prose-a:underline prose-a:font-medium text-light text-lg">
           <Markdown>{post.content}</Markdown>
         </article>
       </div>

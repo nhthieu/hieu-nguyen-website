@@ -13,7 +13,7 @@ function BlogPage({ }: Props) {
   const posts = getPosts();
 
   return (
-    <div className='w-full min-h-screen py-40 pb-64'>
+    <div className='w-full min-h-screen pb-64'>
       <div className="flex flex-col border-b border-solid border-light/10 pb-16">
         <h1 className="font-bold text-5xl mb-6">Blog</h1>
         <p className="text-light/75 font-medium text-lg">Where I write tech and non-tech related stories, ideas and insights.</p>

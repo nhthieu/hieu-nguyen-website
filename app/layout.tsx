@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.className} bg-dark text-light`}>
         {/* <Header className='px-40'/> */}
-        <main className='px-40'>
+        <main className=''>
           {children}
         </main>
         {/* <Footer className='px-40'/> */}

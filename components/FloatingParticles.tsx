@@ -14,7 +14,7 @@ function FloatingParticles({ }: Props) {
   }, []);
 
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await console.log(container);
+    console.log(container);
   }, []);
 
   return (
@@ -43,7 +43,7 @@ function FloatingParticles({ }: Props) {
               enable: false,
               area: 800,
             },
-            value: 30,
+            value: 20,
           },
           opacity: {
             value: 0.5,

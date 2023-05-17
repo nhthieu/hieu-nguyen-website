@@ -13,9 +13,7 @@ export const metadata = {
 export async function generateStaticParams() {
   const posts = getPosts();
   return posts.map(post => ({
-    params: {
-      slug: post.data.slug,
-    }
+    slug: post.data.slug
   }));
 }
 
@@ -38,13 +36,11 @@ const getPostContent = (slug: string): PostData => {
 
 
 type Props = {
-  params: {
-    slug: string;
-  }
+  params: { slug: string; }
 }
 
 function BlogContentPage({ params }: Props) {
-  const slug = params.slug;
+  const { slug } = params;
   const post = getPostContent(slug);
 
   return (

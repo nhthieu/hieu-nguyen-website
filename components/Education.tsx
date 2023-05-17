@@ -16,15 +16,15 @@ function Education({ }: Props) {
   )
 
   return (
-    <div className='text-light my-32 mb-72 w-full'>
-      <h2 className='font-bold text-8xl mb-32 w-full tracking-[2px] text-center md:text-6xl md:mb-16 xs:text-4xl'>Education</h2>
-      <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
+    <div className='text-light mb-64 w-full md:mb-48'>
+      <h2 className='font-bold text-8xl mb-32 w-full tracking-[2px] text-center lg:text-7xl lg:mb-28 md:text-6xl md:mb-16 xs:text-4xl'>Education</h2>
+      <div ref={ref} className='w-[75%] flex items-center mx-auto relative xl:w-full'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className='absolute left-8 top-0 w-[4px] h-full bg-light origin-top'
+          className='absolute left-8 top-0 w-[4px] h-full bg-light origin-top xl:left-0 xl:w-[2px] md:hidden'
         />
 
-        <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
+        <ul className='w-full flex flex-col items-start justify-between xs:ml-2'>
           <EducationDetail
             type='Dual-degree Bachelor of Information Technology'
             time='Aug 2020 - Oct 2024 (expected)'

@@ -21,37 +21,37 @@ export const metadata = {
 function AboutPage() {
   return (
     <div className='w-full flex flex-col items-center justify-between pb-40'>
-      <section id="about" className="w-full flex justify-between space-x-20">
-        <div className='w-full h-auto'>
-          <Image src={profilePic} alt='My Profile Picture' priority className='w-full h-auto object-cover' />
+      <section id="about" className="w-full mb-64 flex justify-between space-x-20 xl:flex-col xl:items-center xl:justify-center xl:space-x-0 xl:space-y-20 md:mb-48">
+        <div className='w-full h-auto 2xl:w-1/2 flex items-center justify-center md:w-full'>
+          <Image src={profilePic} alt='My Profile Picture' priority className='w-full h-auto object-cover md:rounded-full md:w-72 md:h-72 sm:w-64 sm:h-64 xs:w-48 xs:h-48' />
         </div>
 
-        <div className="flex flex-col items-start justify-start">
-          <div className="mb-8">
+        <div className="flex flex-col items-start justify-start 2xl:w-1/2 xl:items-center xl:w-full">
+          <div className="mb-4">
             {/* <Logo className="w-28" /> */}
             <h1 className="font-medium text-lg text-light/75 uppercase">About me</h1>
           </div>
-          <p className='my-4 font-medium text-light'>{para1}</p>
-          <p className='my-4 font-medium text-light'>{para2}</p>
-          <p className='my-4 font-medium text-light'>{para3}</p>
-          <div className='my-4 font-medium '>
+          <p className='my-4 font-medium text-light xs:text-sm'>{para1}</p>
+          <p className='my-4 font-medium text-light xs:text-sm'>{para2}</p>
+          <p className='my-4 font-medium text-light xs:text-sm'>{para3}</p>
+          <div className='my-4 font-medium xl:self-start xs:text-sm'>
             <p><b>Full name:</b> Hieu Nguyen Ho Trung</p>
             <p><b>Email:</b> nhthieu0106@gmail.com</p>
             <p><b>Location:</b> Ho Chi Minh, Vietnam</p>
           </div>
-          <div className='flex items-center self-start mt-8 lg:self-center'>
+          <div className='flex items-center self-start mt-8 xs:mt-4'>
             <Link
               href='/cv.pdf'
               target='_blank'
               download={true}
-              className='flex items-center bg-light text-dark p-2.5 px-6 rounded-lg text-lg font-semibold border-2 border-solid border-transparent hover:border-light hover:bg-dark hover:text-light transition ease duration-300 mr-8'>
+              className='flex items-center bg-light text-dark p-2.5 px-6 rounded-lg text-lg font-semibold border-2 border-solid border-transparent hover:border-light hover:bg-dark hover:text-light transition ease duration-300 mr-8 md:px-4 md:text-base xs:text-sm md:mr-4'>
               Resume
-              <LinkArrow className='w-6 ml-2' />
+              <LinkArrow className='w-6 ml-2 md:hidden' />
             </Link>
             <Link
                 href='mailto:nguyenhotrunghieu0106@gmail.com'
                 target='_blank'
-                className='text-lg font-semibold capitalize text-light underline md:text-lg'
+                className='text-lg font-semibold text-light underline md:text-base xs:text-sm'
               >
                 Email me
               </Link>
@@ -59,9 +59,9 @@ function AboutPage() {
         </div>
       </section>
 
-      <Skills />
-      {/* <Experience /> */}
       <Education />
+      {/* <Experience /> */}
+      <Skills />
     </div>
   );
 }

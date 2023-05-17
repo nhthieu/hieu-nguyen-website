@@ -15,7 +15,7 @@ function EducationDetail({ type, time, place, gpa, info }: Props) {
   const ref = useRef<HTMLLIElement>(null);
 
   return (
-    <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[65%] mx-auto flex flex-col items-center justify-between md:w-[80%]'>
+    <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[65%] mx-auto flex flex-col items-center justify-between xl:w-[80%] md:w-full'>
       {/* <LiIcon reference={ref}/> */}
       <motion.div
         initial={{ y: 50 }}

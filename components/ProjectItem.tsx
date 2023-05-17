@@ -9,6 +9,9 @@ type Props = {
   className?: string;
 }
 
+// css for hover effect
+// relative before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-cardRadialGradient
+
 function ProjectItem({ date, title, description, url, blank, className }: Props) {
   return (
     <Link href={url} target={blank ? '_blank' : ''} className={className}>

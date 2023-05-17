@@ -1,0 +1,112 @@
+{
+  "skills": [
+    {
+      "name": "Javascript",
+      "proficiency": "85%",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg"
+    },
+    {
+      "name": "HTML",
+      "proficiency": "90%",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/html5/html5-original.svg"
+    },
+    {
+      "name": "CSS",
+      "proficiency": "85%",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/css3/css3-original.svg"
+    },
+    {
+      "name": "React",
+      "proficiency": "65%",
+      "link": "https://react.dev/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
+    },
+    {
+      "name": "Python",
+      "proficiency": "70%",
+      "link": "https://www.python.org/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/python/python-original.svg"
+    },
+    {
+      "name": "Java",
+      "proficiency": "70%",
+      "link": "https://www.java.com/en/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/java/java-original.svg"
+    },
+    {
+      "name": "Typescript",
+      "proficiency": "65%",
+      "link": "https://www.typescriptlang.org/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+    },
+    {
+      "name": "Node",
+      "proficiency": "65%",
+      "link": "https://nodejs.org/en",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nodejs/nodejs-original.svg"
+    },
+    {
+      "name": "Express",
+      "proficiency": "65%",
+      "link": "https://expressjs.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/express/express-original.svg"
+    },
+    {
+      "name": "Tailwind",
+      "proficiency": "65%",
+      "link": "https://tailwindcss.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/tailwindcss/tailwindcss-plain.svg"
+    },
+    {
+      "name": "Git",
+      "proficiency": "75%",
+      "link": "https://git-scm.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/git/git-original.svg"
+    },
+    {
+      "name": "Github",
+      "proficiency": "75%",
+      "link": "https://github.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/github/github-original.svg"
+    },
+    {
+      "name": "MongoDB",
+      "proficiency": "60%",
+      "link": "https://www.mongodb.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/mongodb/mongodb-original.svg"
+    },
+    {
+      "name": "MySQL",
+      "proficiency": "70%",
+      "link": "https://www.mysql.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/mysql/mysql-original.svg"
+    },
+    {
+      "name": "Linux",
+      "proficiency": "70%",
+      "link": "https://en.wikipedia.org/wiki/Linux",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/linux/linux-original.svg"
+    },
+    {
+      "name": "Next",
+      "proficiency": "60%",
+      "link": "https://nextjs.org/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nextjs/nextjs-original.svg"
+    },
+    {
+      "name": "Vim",
+      "proficiency": "60%",
+      "link": "https://en.wikipedia.org/wiki/Vim_(text_editor)",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/vim/vim-original.svg"
+    },
+    {
+      "name": "Figma",
+      "proficiency": "65%",
+      "link": "https://www.figma.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/figma/figma-original.svg"
+    }
+  ]
+}

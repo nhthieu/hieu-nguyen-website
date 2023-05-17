@@ -7,3 +7,14 @@ interface PostData {
   };
   content: string;
 }
+
+interface ProfileData {
+  skills: [
+    {
+      name: string;
+      proficiency?: number;
+      link: string;
+      image: string;
+    }
+  ]
+}

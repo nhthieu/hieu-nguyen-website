@@ -42,7 +42,7 @@ module.exports = {
         circularDarkSm: 'repeating-radial-gradient(rgba(255,255,255,0.5) 2px, #1b1b1b 5px, #1b1b1b 40px)',
         cardRadialGradient: 'radial-gradient(800px circle at 100px 100px, rgba(255,255,255,0.06), transparent 40%)',
         customLinear: 'linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(35,35,35,1) 100%);',
-        customLinear2: 'linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(23,23,24,1) 50%, rgba(0,0,0,1) 100%);',
+        customLinear2: 'linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(31,31,32,1) 50%, rgba(0,0,0,1) 100%);',
         customRadial: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(16,16,17,1) 50%, rgba(0,0,0,1) 100%);'
       },  
     },

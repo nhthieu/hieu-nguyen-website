@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className='w-full min-h-screen pb-64'>
+    <div className='w-full min-h-screen pb-48'>
       <div className="flex flex-col border-b border-solid border-light/10 pb-16 md:text-center">
         <h1 className="font-bold text-5xl mb-6 md:text-4xl">Projects</h1>
         <p className="text-light/75 font-medium text-lg md:text-base">Some are from school and some are side projects on my own time.</p>

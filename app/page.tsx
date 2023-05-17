@@ -6,7 +6,7 @@ import SideBar from '@/components/SideBar'
 
 export default function Home() {
   return (
-    <div className='w-full h-screen flex flex-col items-center justify-center bg-customLinear2 xs:px-4 md:px-12 sm:px-8'>
+    <div className='w-full h-screen flex flex-col items-center justify-center bg-customLinear2 xs:px-4 md:px-12 sm:px-8 overscroll-none'>
       {/* <OpeningEffect /> */}
       <FloatingParticles />
       <SideBar />

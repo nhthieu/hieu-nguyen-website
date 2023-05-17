@@ -7,7 +7,7 @@ export const metadata = {
 
 function ContactPage() {
   return (
-    <div className='w-full pb-40'>
+    <div className='w-full pb-48'>
       <div className="grid grid-cols-3 gap-8 2xl:grid-cols-2 md:grid-cols-1">
         <ContactItem
           className='col-span-1'

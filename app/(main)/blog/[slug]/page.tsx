@@ -44,7 +44,7 @@ function BlogContentPage({ params }: Props) {
   const post = getPostContent(slug);
 
   return (
-    <div className='w-full min-h-screen pb-64'>
+    <div className='w-full min-h-screen pb-48'>
       <div className="max-w-[80%] mx-auto xl:max-w-full">
         <Link href="/blog">
           <div className="w-6">

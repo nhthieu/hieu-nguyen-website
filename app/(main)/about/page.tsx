@@ -20,7 +20,7 @@ export const metadata = {
 
 function AboutPage() {
   return (
-    <div className='w-full flex flex-col items-center justify-between pb-40'>
+    <div className='w-full flex flex-col items-center justify-between pb-48'>
       <section id="about" className="w-full mb-64 flex justify-between space-x-20 xl:flex-col xl:items-center xl:justify-center xl:space-x-0 xl:space-y-20 md:mb-48">
         <div className='w-full h-auto 2xl:w-1/2 flex md:items-center justify-center md:w-full'>
           <Image src={profilePic} alt='My Profile Picture' priority className='w-full h-auto object-cover grayscale md:rounded-full md:w-72 md:h-72 sm:w-64 sm:h-64 xs:w-48 xs:h-48' />

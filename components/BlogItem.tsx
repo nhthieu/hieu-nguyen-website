@@ -12,12 +12,11 @@ function BlogItem({ title, description, slug, date }: Props) {
   return (
     <Link
       href={`/blog/${slug}`}
-      className="mb-12 relative"
+      className="mb-12"
     >
-      <h1 className="font-medium text-2xl">{title}</h1>
+      <h1 className="font-medium text-2xl md:text-xl xs:text-sm">{title}</h1>
       {/* <p className=' font-normal text-lg mb-2'>{description}</p> */}
-      <div className='w-full h-[1px] bg-light/75 mb-3' />
-      <p className="text-light/75">{date}</p>
+      <p className="text-light/75 md:text-sm xs:text-xs">{date}</p>
     </Link>
   )
 }

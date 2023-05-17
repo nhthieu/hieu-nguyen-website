@@ -49,21 +49,20 @@ function BlogContentPage({ params }: Props) {
 
   return (
     <div className='w-full min-h-screen pb-64'>
-      <div className="max-w-[80%] mx-auto">
+      <div className="max-w-[80%] mx-auto xl:max-w-full">
         <Link href="/blog">
           <div className="w-6">
             <ArrowBackIcon className="fill-light/75  hover:fill-light transition duration-300 ease-out" />
           </div>
         </Link>
         <div className="flex flex-col items-center mb-20 mt-16 w-full">
-          <h1 className="text-5xl font-bold mb-6 text-center">{post.data.title}</h1>
-          <p className="text-light/75 text-lg text-center">{post.data.date}</p>
+          <h1 className="text-5xl font-bold mb-6 text-center lg:text-4xl md:text-3xl md:mb-4 sm:text-2xl">{post.data.title}</h1>
+          <p className="text-light/75 text-lg text-center lg:text-base">{post.data.date}</p>
         </div>
-        <article className="prose-base prose-pre:bg-light/10 prose-pre:text-light prose-headings:font-bold prose-a:underline prose-a:font-medium text-light text-lg">
+        <article className=" prose-lg prose-pre:bg-light/10 prose-pre:text-light prose-pre:overflow-x-scroll prose-headings:font-bold prose-a:underline prose-a:font-medium text-light lg:prose-base sm:prose-sm">
           <Markdown>{post.content}</Markdown>
         </article>
       </div>
-
     </div>
   )
 }

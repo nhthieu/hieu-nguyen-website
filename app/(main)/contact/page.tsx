@@ -8,23 +8,20 @@ export const metadata = {
 function ContactPage() {
   return (
     <div className='w-full pb-40'>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-3 gap-8 2xl:grid-cols-2 md:grid-cols-1">
         <ContactItem
           className='col-span-1'
           name='LinkedIn'
-          info="nhthieu16"
           href="https://www.linkedin.com/in/nhthieu16/"
         />
         <ContactItem
           className='col-span-1'
           name='Email'
-          info="nhthieu0106@gmail.com"
           href="mailto:nhthieu0106@gmail.com"
         />
         <ContactItem
           className='col-span-1'
           name='Github'
-          info="nhthieu"
           href="https://www.github.com/nhthieu"
         />
       </div>

@@ -19,12 +19,6 @@
       "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/css3/css3-original.svg"
     },
     {
-      "name": "React",
-      "proficiency": "65%",
-      "link": "https://react.dev/",
-      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
-    },
-    {
       "name": "Python",
       "proficiency": "70%",
       "link": "https://www.python.org/",
@@ -41,6 +35,18 @@
       "proficiency": "65%",
       "link": "https://www.typescriptlang.org/",
       "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/typescript/typescript-original.svg"
+    },
+    {
+      "name": "C++",
+      "proficiency": "60%",
+      "link": "https://cplusplus.com/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/cplusplus/cplusplus-original.svg"
+    },
+    {
+      "name": "React",
+      "proficiency": "65%",
+      "link": "https://react.dev/",
+      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
     },
     {
       "name": "Node",
@@ -95,12 +101,6 @@
       "proficiency": "60%",
       "link": "https://nextjs.org/",
       "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nextjs/nextjs-original.svg"
-    },
-    {
-      "name": "Vim",
-      "proficiency": "60%",
-      "link": "https://en.wikipedia.org/wiki/Vim_(text_editor)",
-      "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/vim/vim-original.svg"
     },
     {
       "name": "Figma",

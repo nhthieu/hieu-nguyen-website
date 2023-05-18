@@ -24,7 +24,7 @@ function EducationDetail({ type, time, place, gpa, info }: Props) {
         viewport={{ once: true }}
       >
         <h3 className='font-bold text-2xl sm:text-xl xs:text-lg'>{type}&nbsp;</h3>
-        <span className='font-medium text-light/75 dark:text-light/75 inline-block mt-2 xs:text-sm'>
+        <span className='font-medium text-dark/75 dark:text-light/75 inline-block mt-2 xs:text-sm'>
           {time} | {place}
         </span>
         {/* <p className='font-medium w-full mt-2 md:text-sm'>

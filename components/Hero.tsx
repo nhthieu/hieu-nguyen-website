@@ -35,7 +35,7 @@ function Hero() {
         className="font-semibold text-6xl mt-16 xs:text-2xl md:text-4xl sm:text-3xl"
       >
         <span className="mr-3 xs:mr-1">{text}</span>
-        <Cursor cursorColor="text-primary" />
+        <Cursor />
       </motion.h1>
       
       <motion.div
@@ -44,7 +44,7 @@ function Hero() {
         transition={{ duration: 1.5 }}
         className="w-[60%] mt-4 xs:mt-0 md:w-full lg:w-[80%]"
       >
-        <h1 className="font-medium text-lg text-light/75 pt-6 sm:text-sm md:text-base">
+        <h1 className="font-medium text-lg text-dark/75 dark:text-light/75 pt-6 sm:text-sm md:text-base">
           Curious software developer, university student passionate about learning and exploring new technologies.
         </h1>
       </motion.div>

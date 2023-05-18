@@ -31,7 +31,7 @@ function Skill({ link, image, proficency }: Props) {
           alt='Skill'
           width={5000}
           height={5000}
-          className="rounded-full border border-light/75 object-cover w-24 h-24 lg:w-20 lg:h-20 xs:w-16 xs:h-16 p-2 bg-light"
+          className="rounded-full border border-dark/5 dark:border-light/75 object-cover w-24 h-24 lg:w-20 lg:h-20 xs:w-16 xs:h-16 p-2 bg-dark/5 dark:bg-light"
         />
       </motion.div>
     </Link>

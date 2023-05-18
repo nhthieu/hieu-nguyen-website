@@ -1,8 +1,7 @@
-import Header from '@/components/Header'
 import './globals.css'
 import { Montserrat } from 'next/font/google'
 import Footer from '@/components/Footer'
-import Script from 'next/script';
+import Providers from '@/components/Providers'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -18,10 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} bg-dark text-light`}>
-        {/* <Header className='px-40'/> */}
+      <body className={`${montserrat.className}`}>
         <main className=''>
-          {children}
+          <Providers>
+            {children}
+          </Providers>
         </main>
         {/* <Footer className='px-40'/> */}
       </body>

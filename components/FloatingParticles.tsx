@@ -4,17 +4,17 @@ import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
+import { useTheme } from "next-themes";
 
 type Props = {}
 
 function FloatingParticles({ }: Props) {
+  const { theme } = useTheme();
   const particlesInit = useCallback(async (engine: Engine) => {
-    // console.log(engine);
     await loadFull(engine);
   }, []);
 
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    // console.log(container);
   }, []);
 
   return (
@@ -26,7 +26,7 @@ function FloatingParticles({ }: Props) {
         fpsLimit: 60,
         particles: {
           color: {
-            value: "#fafafa",
+            value: theme === "dark" ? "#f5f5f5" : "#121212",
           },
           move: {
             enable: true,
@@ -43,7 +43,7 @@ function FloatingParticles({ }: Props) {
               enable: false,
               area: 800,
             },
-            value: 25,
+            value: 30,
           },
           opacity: {
             value: 0.5,
@@ -52,7 +52,7 @@ function FloatingParticles({ }: Props) {
             type: "circle",
           },
           size: {
-            value: { min: 1, max: 4 },
+            value: { min: 1, max: 5 },
           },
         },
         detectRetina: true,

@@ -1,16 +1,20 @@
+import BackToTop from "@/components/BackToTop";
 import ProjectItem from "@/components/ProjectItem";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export const metadata = {
   title: "Hieu Nguyen - Projects",
-  description: `Hieu Nguyen's Portfolio`,
+  description: `Hieu Nguyen's Personal Website`,
 }
 
 export default function ProjectsPage() {
   return (
     <div className='w-full min-h-screen pb-48'>
-      <div className="flex flex-col border-b border-solid border-light/10 pb-16 md:text-center">
+      <ThemeSwitcher />
+      <BackToTop />
+      <div className="flex flex-col border-b border-solid border-dark/10 dark:border-light/10 pb-16 md:text-center">
         <h1 className="font-bold text-5xl mb-6 md:text-4xl">Projects</h1>
-        <p className="text-light/75 font-medium text-lg md:text-base">Some are from school and some are side projects on my own time.</p>
+        <p className="text-dark/75 dark:text-light/75 font-medium text-lg md:text-base">Some are from school and some are side projects on my own time.</p>
       </div>
 
       <div className="w-full grid grid-cols-3 gap-4 pt-20 2xl:grid-cols-2 md:grid-cols-1">

@@ -38,7 +38,6 @@ I love writing, and I love sharing my knowledge with others. I want to write abo
 
 I'm still a college student at the time of writing this, and I'm still learning new things every day. I will continue to improve the website and build more projects in the future. Also, I'm planning on adding some more features to the website like:
 
-- [ ] Light mode: Although I'm a big fan of dark mode, and light mode doesn't look great with the current design, I know that some people prefer it. So, noted!
 - [ ] Comment section: I'm still not sure about this one since it will require a lot of work to implement and maintain. I'm thinking about using some BaaS (Backend as a Service) for this.
 - [ ] Multi-language support: I'm planning on adding Vietnamese support to the website since I'm Vietnamese and I want to share my knowledge with my fellow Vietnamese developers. In addition to that, I know French so I might add support for this language as well in the future. Not rooting for this one though, since I'm not sure if I will be able to maintain the translations. But anyway, fingers crossed!
 - [ ] More blog posts: I'm planning on writing more blog posts in the future. I'm currently working on a few projects and I'm planning on writing about them. I'm also planning on writing about some of the things that I've learned and some of the things that I'm currently learning. So, stay tuned!

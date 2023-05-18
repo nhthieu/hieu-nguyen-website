@@ -42,8 +42,8 @@ module.exports = {
         circularDarkSm: 'repeating-radial-gradient(rgba(255,255,255,0.5) 2px, #1b1b1b 5px, #1b1b1b 40px)',
         cardRadialGradientLight: 'radial-gradient(800px circle at 100px 100px, rgba(18,18,18,0.03), transparent 30%)',
         cardRadialGradientDark: 'radial-gradient(800px circle at 100px 100px, rgba(255,255,255,0.06), transparent 40%)',
-        customLinearLight: 'linear-gradient(150deg, rgba(250,250,250,1) 0%, rgba(230,230,230,1) 50%, rgba(250,250,250,1) 100%);',
-        customLinearDark: 'linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(28,29,28,1) 50%, rgba(0,0,0,1) 100%);',
+        customLinearLight: 'linear-gradient(150deg, rgba(250,250,250,1) 0%, rgba(220,220,220,1) 50%, rgba(250,250,250,1) 100%);',
+        customLinearDark: 'linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 50%, rgba(0,0,0,1) 100%);',
         customRadial: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(16,16,17,1) 50%, rgba(0,0,0,1) 100%);'
       },  
     },

@@ -108,5 +108,49 @@
       "link": "https://www.figma.com/",
       "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/figma/figma-original.svg"
     }
+  ],
+  "projects": [
+    {
+      "title": "Hieu Nguyen's Personal Website",
+      "description": "The website you're looking at.",
+      "date": "May 15, 2023",
+      "url": "/"
+    },
+    {
+      "title": "Chat App",
+      "description": "A basic chat application with real-time messaging using Socket.io and Node as the backend and React as the frontend.",
+      "date": "Nov 24, 2022",
+      "url": "https://github.com/nhthieu/chat_app"
+    },
+    {
+      "title": "Cafe Management App",
+      "description": "A Java application for a personal cafe that helps owner manage orders, products and the staffs.",
+      "date": "Dec 5, 2022",
+      "url": "https://github.com/nhthieu/CafeManagementApp"
+    },
+    {
+      "title": "Covid Website",
+      "description": "A Covid-19 web application designed to help healthcare providers manage patient's data and related products.",
+      "date": "Aug 26, 2022",
+      "url": "https://github.com/namhoai1109/Covid-web"
+    },
+    {
+      "title": "Remote Control",
+      "description": "A simple Remote Control project for the Networking Course, implementing socket programming in Python.",
+      "date": "Jul 31, 2022",
+      "url": "https://github.com/nhthieu/RC_Project"
+    },
+    {
+      "title": "Hanbai",
+      "description": "An Android mobile application that helps online merchants manage orders, customers and products.",
+      "date": "Sep 7, 2022",
+      "url": "https://github.com/Anhduy-git/Hanbai"
+    },
+    {
+      "title": "Food Ordering App",
+      "description": "An outsource Android application for a personal restaurant that helps owner manage orders, customers and products.",
+      "date": "Sep 7, 2022",
+      "url": "https://github.com/Anhduy-git/Food-Order-Management"
+    }
   ]
 }

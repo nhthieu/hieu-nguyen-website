@@ -22,18 +22,21 @@ export const metadata = {
 
 function AboutPage() {
   return (
-    <div className='w-full flex flex-col items-center justify-between pb-48'>
+    <div className='w-full flex flex-col items-center justify-between pb-48 px-36 xl:px-0'>
       <ThemeSwitcher />
       <BackToTop />
 
-      <section id="about" className="w-full mb-64 flex justify-between space-x-20 xl:flex-col xl:items-center xl:justify-center xl:space-x-0 xl:space-y-20 md:mb-48">
-        <div className='w-full h-auto 2xl:w-1/2 flex md:items-center justify-center md:w-full'>
-          <Image src={profilePic} alt='My Profile Picture' priority className='w-full h-auto object-cover grayscale md:rounded-full md:w-72 md:h-72 sm:w-64 sm:h-64 xs:w-48 xs:h-48' />
+      <section id="about" className="mb-64 w-full flex flex-col items-center justify-center xl:flex-col xl:items-center xl:justify-center xl:space-x-0 xl:space-y-20 md:mb-48">
+        <div className="flex items-center w-full justify-center space-x-24 mb-20 2xl:space-x-16 xl:flex-col xl:mb-12 xl:text-center xl:space-x-0">
+          <div className="xl:order-2 xl:mt-8 flex-shrink-1">
+            <h1 className="text-5xl capitalize font-bold mb-2 2xl:text-4xl sm:text-3xl xs:text-2xl">Hieu Nguyen Ho Trung</h1>
+            <p className="text-xl font-medium text-dark/75 dark:text-light/75 sm:text-lg xs:text-base">( Developer / Photographer )</p>
+          </div>
+          <Image src={profilePic} alt='My Profile Picture' priority className=' w-52 h-52 flex-shrink-0 border border-dark dark:border-light object-cover grayscale rounded-full 2xl:w-48 2xl:h-48 sm:w-40 sm:h-40' />
         </div>
 
-        <div className="flex flex-col items-start justify-start 2xl:w-1/2 xl:items-center xl:w-full">
-          <div className="mb-4">
-            {/* <Logo className="w-28" /> */}
+        <div className="flex flex-col items-start justify-start text-justify">
+          <div className="mb-4 xl:self-center">
             <h1 className="font-medium text-lg text-dark/75 dark:text-light/75 uppercase">About me</h1>
           </div>
           <p className='my-4 font-medium text-dark dark:text-light xs:text-sm'>{para1}</p>
@@ -54,12 +57,12 @@ function AboutPage() {
               <LinkArrow className='w-6 ml-2 md:hidden' />
             </Link>
             <Link
-                href='mailto:nguyenhotrunghieu0106@gmail.com'
-                target='_blank'
-                className='text-lg font-semibold text-dark dark:text-light underline md:text-base xs:text-sm'
-              >
-                Email me
-              </Link>
+              href='mailto:nguyenhotrunghieu0106@gmail.com'
+              target='_blank'
+              className='text-lg font-semibold text-dark dark:text-light underline md:text-base xs:text-sm'
+            >
+              Email me
+            </Link>
           </div>
         </div>
       </section>

@@ -18,7 +18,7 @@ function CustomMobileLink({ href, title, toggle, className }: Props) {
   }
 
   return (
-    <button aria-label='Navbar Link' className={`${className} relative group text-light dark:text-dark my-2`} onClick={handleClick}>
+    <button aria-label='Navbar Link' className={`${className} relative group text-light dark:text-dark my-2 md:text-lg sm:text-base`} onClick={handleClick}>
       {title}
       {/* <span className={`h-[1px] inline-block bg-light dark:bg-dark
       absolute left-0 -bottom-0.5

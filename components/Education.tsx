@@ -18,7 +18,7 @@ function Education({ }: Props) {
   return (
     <div className='text-dark dark:text-light mb-64 w-full md:mb-48'>
       <h2 className='font-bold text-8xl mb-32 w-full tracking-[2px] text-center lg:text-7xl lg:mb-28 md:text-6xl md:mb-16 xs:text-4xl'>Education</h2>
-      <div ref={ref} className='w-[75%] flex items-center mx-auto relative xl:w-full'>
+      <div ref={ref} className='w-full flex items-center mx-auto relative xl:w-full'>
         <motion.div
           style={{ scaleY: scrollYProgress }}
           className='absolute left-8 top-0 w-[4px] h-full bg-dark dark:bg-light origin-top xl:left-0 xl:w-[2px] md:hidden'

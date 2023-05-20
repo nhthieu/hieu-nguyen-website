@@ -1,3 +1,5 @@
+// import { Timestamp } from "firebase/firestore";
+
 interface PostData {
   data: {
     title: string;

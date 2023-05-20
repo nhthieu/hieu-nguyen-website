@@ -12,10 +12,7 @@ function Auth({ setUser }: Props) {
   const signInWithGoogle = () => {
     setPersistence(auth, browserSessionPersistence)
       .then(() => {
-        return signInWithPopup(auth, provider).catch((err) => {
-          console.log(err.code, err.message)
-          alert(err.message)
-        })
+        return signInWithPopup(auth, provider)
       })
       .catch((err) => {
         console.log(err.code, err.message)

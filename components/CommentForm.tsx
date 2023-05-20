@@ -32,13 +32,13 @@ function CommentForm({ user, slug }: Props) {
   }
 
   return (
-    <div className="flex items-center mb-12 w-full">
+    <div className="flex items-center mb-8 w-full md:mb-8">
       <Image 
         src={ user.photoURL || defaultImage }
         alt="Avatar"
         width={500}
         height={500}
-        className="rounded-full w-16 h-16 object-cover"
+        className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12"
       />
       <form
         onSubmit={handleSubmit}
@@ -48,7 +48,7 @@ function CommentForm({ user, slug }: Props) {
           onChange={(e) => setComment(e.target.value)}
           type="text"
           placeholder="Write something..."
-          className="mb-4 p-2 border-b border-solid border-dark/25 dark:border-light/25 outline-none focus:border-dark focus:dark:border-light dark:bg-dark" />
+          className=" p-2 border-b border-solid border-dark/25 dark:border-light/25 outline-none focus:border-dark focus:dark:border-light bg-light dark:bg-dark md:p-1 md:text-base xs:text-sm" />
       </form>
     </div>
   )

@@ -26,7 +26,7 @@ function CommentSection({ slug, className }: Props) {
 
   return (
     <div className={`${className}`}>
-      <h1 className="text-4xl font-bold mb-8">Leave a comment!</h1>
+      <h1 className="text-4xl font-bold mb-8 md:text-3xl">Leave a comment!</h1>
       {
         user ? <CommentForm user={user} slug={slug}/> : <Auth setUser={setUser} />
       }

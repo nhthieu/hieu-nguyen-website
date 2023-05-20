@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import CommentItem from './CommentItem'
 import { db } from '@/firebase';
-import { collection, onSnapshot, query, where, orderBy, limit, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot, query, where, orderBy, limit } from 'firebase/firestore';
 
 type Props = {
   slug: string;
@@ -14,24 +14,20 @@ function CommentList({ slug }: Props) {
   useEffect(() => {
     const commentsRef = collection(db, 'blog-comments');
     const q = query(commentsRef, where('slug', '==', slug), orderBy('createdAt', 'desc'), limit(10));
-    const unsubsribe = onSnapshot(q, (snapshot) => {
-      const comments = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data()
-      }))
-      setComments(comments)
-    })
-    console.log(comments)
+    const unsubsribe = onSnapshot(q,
+      (snapshot) => {
+        const comments = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        console.log(comments)
+
+        setComments(comments)
+      }, (error) => {
+        console.log(error);
+        alert(error.message);
+      })
     return () => unsubsribe();
-    // getDocs(q).then((snapshot) => {
-    //   const comments = snapshot.docs.map((doc) => ({
-    //     id: doc.id,
-    //     ...doc.data()
-    //   }))
-    //   console.log(comments);
-    //   setComments(comments)
-    // }
-    // )
   }, [slug]);
 
   return (

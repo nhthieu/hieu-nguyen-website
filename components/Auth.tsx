@@ -23,12 +23,12 @@ function Auth({ setUser }: Props) {
   return (
     <div className="flex items-center mb-12">
       <button
-        className="p-4 bg-dark dark:bg-light rounded-lg text-light dark:text-dark font-bold"
+        className="p-4 bg-dark dark:bg-light rounded-md text-light dark:text-dark font-bold md:text-sm sm:text-xs "
         onClick={signInWithGoogle}
       >
-        Sign in
+        Sign in to comment
       </button>
-      <h1 className="ml-4 font-medium text-lg">Sign in with Google to comment</h1>
+      {/* <h1 className="ml-4 font-medium text-lg md:text-base sm:text-sm">Sign in with Google to comment</h1> */}
     </div>
   )
 }

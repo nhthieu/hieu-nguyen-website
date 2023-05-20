@@ -20,12 +20,12 @@ function CommentItem({ name, comment, createdAt, photoURL }: Props) {
           alt="Avatar"
           width={500}
           height={500}
-          className="rounded-full w-16 h-16 object-cover"
+          className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12"
         />
       </div>
-      <div className="flex flex-col mb-2 overflow-hidden justify-center">
+      <div className="flex flex-col overflow-hidden justify-center">
         <div className="flex items-center">
-          <h1 className="font-bold mr-2 py-0 ">
+          <h1 className="font-bold mr-2 xs:text-base">
             {name}
           </h1>
           {/* <p className="font-extralight text-sm">
@@ -38,7 +38,7 @@ function CommentItem({ name, comment, createdAt, photoURL }: Props) {
             }
           </p> */}
         </div>
-        <p className="">
+        <p className="xs:text-sm">
           {comment}
         </p>
       </div>

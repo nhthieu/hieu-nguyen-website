@@ -15,8 +15,6 @@ export async function generateStaticParams() {
   }));
 }
 
-
-
 const getPostContent = (slug: string): PostData => {
   const folder = "contents/blogs";
   const file = `${folder}/${slug}.md`;
@@ -39,7 +37,6 @@ export const metadata = {
   description: `Hieu Nguyen's Personal Website`,
 }
 
-
 type Props = {
   params: { slug: string; }
 }
@@ -49,7 +46,7 @@ function BlogContentPage({ params }: Props) {
   const post = getPostContent(slug);
 
   return (
-    <div className='w-full min-h-screen pb-48'>
+    <div className='w-full pb-48'>
       <ThemeSwitcher />
       <BackToTop />
       <div className="max-w-[80%] mx-auto xl:max-w-full">
@@ -69,10 +66,10 @@ function BlogContentPage({ params }: Props) {
           </p>
         </article>
 
-        {/* <CommentSection
+        <CommentSection
           slug={slug}
           className="mt-16"
-        /> */}
+        />
 
       </div>
 

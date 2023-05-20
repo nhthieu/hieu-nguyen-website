@@ -19,7 +19,6 @@ function Auth({ setUser }: Props) {
       })
       .catch((err) => {
         console.log(err.code, err.message)
-        alert(err.message)
       })
   }
 

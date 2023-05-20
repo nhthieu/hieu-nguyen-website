@@ -15,7 +15,7 @@ function BlogPage({ }: Props) {
   const posts = getPosts();
 
   return (
-    <div className='w-full min-h-screen pb-48'>
+    <div className='w-full pb-48'>
       <ThemeSwitcher />
       <BackToTop />
       <div className="flex flex-col border-b border-solid border-dark/10 dark:border-light/10 pb-16 md:text-center">

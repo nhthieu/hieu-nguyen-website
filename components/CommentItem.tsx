@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import avatar from "@/public/images/astronaut.jpg"
 import { Timestamp } from "firebase/firestore";
@@ -9,26 +10,34 @@ type Props = {
   name: string;
   createdAt: Timestamp;
   photoURL: string;
+  replies: any[];
+  replyButton?: boolean;
 }
 
-function CommentItem({ name, comment, createdAt, photoURL }: Props) {
+function CommentItem({ name, comment, createdAt, photoURL, replies, replyButton = true }: Props) {
+  const [showReplies, setShowReplies] = useState<boolean>(false);
+  const toggleReplies = () => {
+    setShowReplies(!showReplies);
+  }
+
   return (
-    <li className="flex items-center mb-8 relative">
-      <div className="mr-4 flex-shrink-0">
-        <Image
-          src={photoURL}
-          alt="Avatar"
-          width={500}
-          height={500}
-          className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12"
-        />
-      </div>
-      <div className="flex flex-col overflow-hidden justify-center">
-        <div className="flex items-center">
-          <h1 className="font-bold mr-2 xs:text-base">
-            {name}
-          </h1>
-          {/* <p className="font-extralight text-sm">
+    <li className="flex flex-col mb-8 ">
+      <div className="flex items-center">
+        <div className="mr-4 flex-shrink-0">
+          <Image
+            src={photoURL || avatar}
+            alt="Avatar"
+            width={500}
+            height={500}
+            className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12"
+          />
+        </div>
+        <div className="flex flex-col overflow-hidden justify-center ">
+          <div className="flex items-center relative">
+            <h1 className="font-bold mr-2 xs:text-base mb-1">
+              {name}
+            </h1>
+            {/* <p className="font-extralight text-sm">
             {
               createdAt.toDate().toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -37,14 +46,43 @@ function CommentItem({ name, comment, createdAt, photoURL }: Props) {
               })
             }
           </p> */}
+          </div>
+          <p className="xs:text-sm font-medium">
+            {comment}
+          </p>
         </div>
-        <p className="xs:text-sm">
-          {comment}
-        </p>
       </div>
-      {/* <button className="py-2 px-4 rounded-2xl bg-dark text-light">
-        Reply
-      </button> */}
+      {
+        replyButton && (
+          <button className="text-dark dark:text-light self-start font-medium text-sm ml-20 md:ml-16 mt-3">
+            Reply
+          </button>
+        )
+      }
+      {
+        replies.length > 0 &&
+        <button
+          onClick={toggleReplies}
+          className="text-dark dark:text-light underline self-start font-md mt-1 ml-20 text-sm md:ml-16">
+          {
+            showReplies ? "Hide replies" : "Show replies"
+          }
+        </button>
+      }
+      {
+        showReplies && (
+          <ul className="ml-16 mt-6">
+            <CommentItem
+              name="Hieu Nguyen"
+              comment="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+              createdAt={createdAt}
+              photoURL={avatar.src}
+              replies={[]}
+              replyButton={false}
+            />
+          </ul>
+        )
+      }
     </li>
   )
 }

@@ -40,6 +40,7 @@ function CommentList({ slug }: Props) {
             comment={comment.comment}
             createdAt={comment.createdAt}
             photoURL={comment.photoURL}
+            replies={[1]}
           />
         ))
       }

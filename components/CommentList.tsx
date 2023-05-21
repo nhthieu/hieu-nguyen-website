@@ -21,7 +21,7 @@ function CommentList({ slug }: Props) {
   // init load
   useEffect(() => {
     const commentsRef = collection(db, 'blog-comments');
-    const q = query(commentsRef, where('slug', '==', slug), orderBy('createdAt', 'desc'), limit(batch));
+    const q = query(commentsRef, where('slug', '==', slug), where('verified', '==', true), orderBy('createdAt', 'desc'), limit(batch));
     const unsubsribe = onSnapshot(q,
       (snapshot) => {
         const comments = snapshot.docs.map((doc) => ({

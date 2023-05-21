@@ -1,26 +1,47 @@
 "use client";
 
 import { User } from "firebase/auth";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, createRef } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "@/firebase";
 import Image from "next/image";
 import defaultImage from "@/public/images/astronaut4.jpg"
+import ReCAPTCHA from "react-google-recaptcha";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 type Props = {
   user: User;
   slug: string;
 }
+const commentsRef = collection(db, 'blog-comments');
 
 function CommentForm({ user, slug }: Props) {
   const ref = useRef<HTMLTextAreaElement>(null);
+  const recaptchaRef = createRef<ReCAPTCHA>();
   const [comment, setComment] = useState<string>("");
-  const [sending, setSending] = useState<boolean>(false);
-  const commentsRef = collection(db, 'blog-comments');
+  // const [sending, setSending] = useState<boolean>(false);
+  const notify = (msg: string) => toast.info(msg, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+    theme: "colored",
+  });
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (comment.trim() === '') return;
-    setComment("");
+    recaptchaRef.current?.execute();
+  }
+
+  const onRecaptchaChange = async (captchaCode: string | null) => {
+    if (!captchaCode) {
+      return;
+    }
     // resize input
     if (ref.current) {
       ref.current.style.height = 'auto';
@@ -34,9 +55,13 @@ function CommentForm({ user, slug }: Props) {
       photoURL: user.photoURL,
       uid: user.uid,
       email: user.email,
+      verified: false,
       replies: []
     })
+    setComment("");
     // setSending(false);
+    recaptchaRef.current?.reset();
+    notify("Comment submitted for review!");
   }
 
   // auto resize input
@@ -64,7 +89,8 @@ function CommentForm({ user, slug }: Props) {
       />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col ml-4 xs:ml-2 w-full">
+        className="flex flex-col ml-4 xs:ml-2 w-full"
+      >
         <textarea
           value={comment}
           onChange={(e) => setComment(e.target.value)}
@@ -72,7 +98,16 @@ function CommentForm({ user, slug }: Props) {
           ref={ref}
           placeholder="Write something..."
           rows={1}
-          className="overflow-hidden border-b border-solid border-dark/25 dark:border-light/25 outline-none focus:border-dark focus:dark:border-light bg-light dark:bg-dark md:text-base xs:text-sm" />
+          className="overflow-hidden border-b border-solid border-dark/25 dark:border-light/25 outline-none focus:border-dark focus:dark:border-light bg-light dark:bg-dark md:text-base xs:text-sm"
+        />
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          size="invisible"
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+          onChange={onRecaptchaChange}
+          badge="bottomright"
+          theme="dark"
+        />
         <button
           disabled={comment.trim() === ""}
           type="submit"
@@ -80,6 +115,18 @@ function CommentForm({ user, slug }: Props) {
           Comment
         </button>
       </form>
+      <ToastContainer
+        // position="top-right"
+        // autoClose={3000}
+        // hideProgressBar={false}
+        // newestOnTop={false}
+        // closeOnClick
+        // rtl={false}
+        // pauseOnFocusLoss
+        // draggable
+        // pauseOnHover
+        // theme="colored"
+      />
     </div>
   )
 }

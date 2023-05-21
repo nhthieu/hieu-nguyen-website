@@ -33,19 +33,21 @@ function CommentItem({ name, comment, createdAt, photoURL, }: Props) {
           />
         </div>
         <div className="flex flex-col overflow-hidden justify-center ">
-          <div className="flex items-center relative">
-            <h1 className="font-bold xs:font-normal mr-2 xs:text-sm mb-1">
+          <div className="flex items-center mb-1">
+            <h1 className="font-bold xs:font-normal mr-2 xs:text-sm ">
               {name}
             </h1>
-            {/* <p className="font-extralight text-sm">
-            {
-              createdAt.toDate().toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })
-            }
-          </p> */}
+            {/* <p className="font-extralight text-sm xs:text-xs">
+              commented on <span className="font-extralight text-sm xs:text-xs">
+                {
+                  createdAt.toDate().toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })
+                }
+              </span>
+            </p> */}
           </div>
           <p className="xs:text-sm font-medium">
             {comment}
@@ -83,7 +85,7 @@ function CommentItem({ name, comment, createdAt, photoURL, }: Props) {
           </ul>
         )
       } */}
-    </li>
+    </li >
   )
 }
 

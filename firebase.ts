@@ -1,8 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from "firebase/analytics";
 import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 import { initializeFirestore, persistentLocalCache } from 'firebase/firestore';
-// import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   // development
@@ -25,6 +23,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 // analytics only works in production
 // const analytics = getAnalytics(app);
 const provider = new GoogleAuthProvider();

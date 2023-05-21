@@ -1,18 +1,15 @@
 "use client";
 
 import { auth, provider } from "@/firebase"
-import { User, setPersistence, signInWithPopup, browserSessionPersistence } from "firebase/auth"
-import Cookies from "js-cookie";
+import { setPersistence, signInWithPopup, browserSessionPersistence, signInWithRedirect, signInWithCredential, inMemoryPersistence } from "firebase/auth"
 
-type Props = {
-  setUser: React.Dispatch<React.SetStateAction<User | null>>;
-}
+type Props = {}
 
-function Auth({ setUser }: Props) {
+function Auth({}: Props) {
   const signInWithGoogle = () => {
-    setPersistence(auth, browserSessionPersistence)
+    setPersistence(auth, inMemoryPersistence)
       .then(() => {
-        return signInWithPopup(auth, provider)
+        return signInWithRedirect(auth, provider);
       })
       .catch((err) => {
         console.log(err.code, err.message)
@@ -25,7 +22,7 @@ function Auth({ setUser }: Props) {
         className="p-4 bg-dark dark:bg-light rounded-md text-light dark:text-dark font-bold md:text-sm sm:text-xs "
         onClick={signInWithGoogle}
       >
-        Sign in to comment
+        Sign in with Google to comment
       </button>
       {/* <h1 className="ml-4 font-medium text-lg md:text-base sm:text-sm">Sign in with Google to comment</h1> */}
     </div>

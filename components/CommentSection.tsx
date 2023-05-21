@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CommentForm from './CommentForm'
 import CommentList from './CommentList';
 import Auth from './Auth';
 import { auth } from '@/firebase';
 import { User, onAuthStateChanged } from 'firebase/auth';
-import Cookies from 'js-cookie';
 
 type Props = {
   slug: string;
@@ -18,21 +17,25 @@ function CommentSection({ slug, className }: Props) {
   // listen for user login/logout
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      setUser(user)
+      setUser(user);
     } else {
-      setUser(null)
+      setUser(null);
     }
   })
 
   return (
-    <div className={`${className}`}>
-      <h1 className="text-4xl font-bold mb-8 md:text-3xl">Leave a comment!</h1>
-      {
-        user ? <CommentForm user={user} slug={slug}/> : <Auth setUser={setUser} />
-      }
-      {/* <CommentForm /> */}
-      <CommentList slug={slug}/>
-    </div>
+    <>
+      <div className={`${className} border-t border-dark/10 dark:border-light/10 border-solid pt-12 flex flex-col items-center mb-8`}>
+        <h1 className="text-4xl font-bold mb-8 md:text-3xl">Comments</h1>
+        {
+          user ?
+            <CommentForm user={user} slug={slug} />
+            :
+            <Auth />
+        }
+      </div>
+      <CommentList slug={slug} />
+    </>
   )
 }
 

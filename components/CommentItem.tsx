@@ -10,11 +10,11 @@ type Props = {
   name: string;
   createdAt: Timestamp;
   photoURL: string;
-  replies: any[];
-  replyButton?: boolean;
+  // replies: any[];
+  // replyButton?: boolean;
 }
 
-function CommentItem({ name, comment, createdAt, photoURL, replies, replyButton = true }: Props) {
+function CommentItem({ name, comment, createdAt, photoURL, }: Props) {
   const [showReplies, setShowReplies] = useState<boolean>(false);
   const toggleReplies = () => {
     setShowReplies(!showReplies);
@@ -22,19 +22,19 @@ function CommentItem({ name, comment, createdAt, photoURL, replies, replyButton 
 
   return (
     <li className="flex flex-col mb-8 ">
-      <div className="flex items-center">
-        <div className="mr-4 flex-shrink-0">
+      <div className="flex ">
+        <div className="mr-4 flex-shrink-0 xs:mr-2">
           <Image
             src={photoURL || avatar}
             alt="Avatar"
             width={500}
             height={500}
-            className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12"
+            className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12 xs:w-8 xs:h-8"
           />
         </div>
         <div className="flex flex-col overflow-hidden justify-center ">
           <div className="flex items-center relative">
-            <h1 className="font-bold mr-2 xs:text-base mb-1">
+            <h1 className="font-bold xs:font-normal mr-2 xs:text-sm mb-1">
               {name}
             </h1>
             {/* <p className="font-extralight text-sm">
@@ -52,7 +52,7 @@ function CommentItem({ name, comment, createdAt, photoURL, replies, replyButton 
           </p>
         </div>
       </div>
-      {
+      {/* {
         replyButton && (
           <button className="text-dark dark:text-light self-start font-medium text-sm ml-20 md:ml-16 mt-3">
             Reply
@@ -82,7 +82,7 @@ function CommentItem({ name, comment, createdAt, photoURL, replies, replyButton 
             />
           </ul>
         )
-      }
+      } */}
     </li>
   )
 }

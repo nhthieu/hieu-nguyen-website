@@ -25,7 +25,7 @@ function CommentForm({ user, slug }: Props) {
     if (ref.current) {
       ref.current.style.height = 'auto';
     }
-    setSending(true);
+    // setSending(true);
     await addDoc(commentsRef, {
       name: user.displayName,
       comment,
@@ -36,8 +36,7 @@ function CommentForm({ user, slug }: Props) {
       email: user.email,
       replies: []
     })
-    setSending(false);
-
+    // setSending(false);
   }
 
   // auto resize input
@@ -61,11 +60,11 @@ function CommentForm({ user, slug }: Props) {
         alt="Avatar"
         width={500}
         height={500}
-        className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12"
+        className="rounded-full w-16 h-16 object-cover md:w-12 md:h-12 xs:w-8 xs:h-8"
       />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col ml-2 w-full">
+        className="flex flex-col ml-4 xs:ml-2 w-full">
         <textarea
           value={comment}
           onChange={(e) => setComment(e.target.value)}
@@ -73,11 +72,11 @@ function CommentForm({ user, slug }: Props) {
           ref={ref}
           placeholder="Write something..."
           rows={1}
-          className="ml-2 overflow-hidden border-b border-solid border-dark/25 dark:border-light/25 outline-none focus:border-dark focus:dark:border-light bg-light dark:bg-dark md:p-1 md:text-base xs:text-sm" />
+          className="overflow-hidden border-b border-solid border-dark/25 dark:border-light/25 outline-none focus:border-dark focus:dark:border-light bg-light dark:bg-dark md:text-base xs:text-sm" />
         <button
           disabled={comment.trim() === ""}
           type="submit"
-          className={`self-end py-2 px-4 text-light dark:text-dark rounded-xl mt-4 md:text-sm ${comment.trim() === "" ? "bg-dark/25 dark:bg-light/25" : "bg-dark opacity-90 dark:bg-light hover:opacity-100"}`}>
+          className={`self-end py-2 px-4 text-light dark:text-dark rounded-xl mt-4 md:text-sm md:py-1 md:px-3 ${comment.trim() === "" ? "bg-dark/25 dark:bg-light/25" : "bg-dark opacity-90 dark:bg-light hover:opacity-100"}`}>
           Comment
         </button>
       </form>

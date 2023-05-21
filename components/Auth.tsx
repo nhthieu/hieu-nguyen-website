@@ -1,15 +1,15 @@
 "use client";
 
 import { auth, provider } from "@/firebase"
-import { setPersistence, signInWithPopup, browserSessionPersistence, signInWithRedirect, signInWithCredential, inMemoryPersistence } from "firebase/auth"
+import { setPersistence, signInWithPopup, browserSessionPersistence } from "firebase/auth"
 
 type Props = {}
 
 function Auth({}: Props) {
   const signInWithGoogle = () => {
-    setPersistence(auth, inMemoryPersistence)
+    setPersistence(auth, browserSessionPersistence)
       .then(() => {
-        return signInWithRedirect(auth, provider);
+        return signInWithPopup(auth, provider);
       })
       .catch((err) => {
         console.log(err.code, err.message)
@@ -24,7 +24,6 @@ function Auth({}: Props) {
       >
         Sign in with Google to comment
       </button>
-      {/* <h1 className="ml-4 font-medium text-lg md:text-base sm:text-sm">Sign in with Google to comment</h1> */}
     </div>
   )
 }

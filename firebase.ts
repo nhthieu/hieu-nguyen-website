@@ -35,4 +35,5 @@ const db = initializeFirestore(app, {
   // cacheSizeBytes: 2 * 1024 * 1024,
 })
 
+
 export { app, provider, auth, db };

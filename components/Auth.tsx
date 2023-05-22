@@ -3,6 +3,8 @@
 import { auth, provider } from "@/firebase"
 import { setPersistence, signInWithPopup, browserSessionPersistence } from "firebase/auth"
 
+
+
 type Props = {}
 
 function Auth({}: Props) {

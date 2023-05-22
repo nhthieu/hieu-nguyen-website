@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState, } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import CommentItem from './CommentItem'
 import { db } from '@/firebase';
 import { collection, onSnapshot, query, where, orderBy, limit, getDocs, startAfter, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
 import { LoadingIcon } from './Icons';
+import { useInView } from 'framer-motion';
 
 type Props = {
   slug: string;
@@ -14,33 +15,37 @@ const batch = 10;
 
 function CommentList({ slug }: Props) {
   const [comments, setComments] = useState<any[]>([]);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
   const [loadingComments, setLoadingComments] = useState<boolean>(true);
   const [lastVisible, setLastVisible] = useState<QueryDocumentSnapshot<DocumentData>>({} as QueryDocumentSnapshot<DocumentData>);
 
   // init load
   useEffect(() => {
-    const commentsRef = collection(db, 'blog-comments');
-    const q = query(commentsRef, where('slug', '==', slug), where('verified', '==', true), orderBy('createdAt', 'desc'), limit(batch));
-    const unsubsribe = onSnapshot(q,
-      (snapshot) => {
-        const comments = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data()
-        }))
-        setLoadingComments(false);
-        if (snapshot.docs.length > 0) {
-          setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
-        }
-        console.log(comments)
-        setComments(comments);
-      }, (error) => {
-        console.log(error);
-        alert(error.message);
-      })
+    if (isInView) {
+      const commentsRef = collection(db, 'blog-comments');
+      const q = query(commentsRef, where('slug', '==', slug), where('verified', '==', true), orderBy('createdAt', 'desc'), limit(batch));
+      const unsubsribe = onSnapshot(q,
+        (snapshot) => {
+          const comments = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data()
+          }))
+          setLoadingComments(false);
+          if (snapshot.docs.length > 0) {
+            setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
+          }
+          console.log(comments)
+          setComments(comments);
+        }, (error) => {
+          console.log(error);
+          alert(error.message);
+        })
 
-    return () => unsubsribe();
-  }, [slug]);
+      return () => { unsubsribe(); console.log('unsubscribed') }
+    }
+  }, [slug, isInView]);
 
   const loadMoreComments = async () => {
     if (!lastVisible) return;
@@ -68,7 +73,7 @@ function CommentList({ slug }: Props) {
   const showLoadMoreButton = lastVisible && comments.length % batch === 0 && comments.length > 0;
 
   return (
-    <>
+    <div ref={ref}>
       {
         loadingComments ? (
           <div className='flex items-center justify-center w-full '>
@@ -91,7 +96,6 @@ function CommentList({ slug }: Props) {
             }
           </ul>
       }
-
       {
         showLoadMoreButton && (
           <div className='w-full flex items-center justify-center mt-16'>
@@ -105,7 +109,7 @@ function CommentList({ slug }: Props) {
           </div>
         )
       }
-    </>
+    </div>
   )
 }
 

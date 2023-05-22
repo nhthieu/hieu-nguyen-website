@@ -1,13 +1,25 @@
 "use client";
 
 import { auth, provider } from "@/firebase"
-import { setPersistence, signInWithPopup, browserSessionPersistence } from "firebase/auth"
+import { setPersistence, signInWithPopup, browserSessionPersistence, User, onAuthStateChanged } from "firebase/auth"
+import { useEffect } from "react";
 
 
+type Props = {
+  setUser: React.Dispatch<React.SetStateAction<User | null>>
+}
 
-type Props = {}
+function Auth({ setUser }: Props) {
+  // listen for user login/logout
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      }
+    })
+    return () => { unsubscribe(); console.log('listen for sign in unsubscribed') }
+  }, [setUser])
 
-function Auth({}: Props) {
   const signInWithGoogle = () => {
     setPersistence(auth, browserSessionPersistence)
       .then(() => {

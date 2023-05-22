@@ -44,8 +44,8 @@ function Header({ className = "" }: Props) {
           {/* <CustomLink href='/' title='Home' className='mx-4' /> */}
           <CustomLink href='/about' title='About' className='mx-4' />
           <CustomLink href='/projects' title='Projects' className='mx-4' />
-          <CustomLink href='/contact' title='Contact' className='mx-4' />
           <CustomLink href='/blog' title='Blog' className='mx-4' />
+          <CustomLink href='/contact' title='Contact' className='mx-4' />
         </nav>
       </header>
 
@@ -59,8 +59,8 @@ function Header({ className = "" }: Props) {
             <CustomMobileLink href='/' title='Home' className='' toggle={toggleMenu} />
             <CustomMobileLink href='/about' title='About' className='' toggle={toggleMenu} />
             <CustomMobileLink href='/projects' title='Projects' className='' toggle={toggleMenu} />
-            <CustomMobileLink href='/contact' title='Contact' className='' toggle={toggleMenu} />
             <CustomMobileLink href='/blog' title='Blog' className='' toggle={toggleMenu} />
+            <CustomMobileLink href='/contact' title='Contact' className='' toggle={toggleMenu} />
           </motion.nav>
         )
       }

@@ -29,8 +29,8 @@ function Navbar({ }: Props) {
       >
         <Link href='/about' className="mx-4 font-sm hover:text-dark dark:hover:text-light transition ease duration-300 xs:mx-2">About </Link>
         <Link href='/projects' className="mx-4 font-sm hover:text-dark dark:hover:text-light transition ease duration-300 xs:mx-2">Projects</Link>
-        <Link href='/contact' className="mx-4 font-sm hover:text-dark dark:hover:text-light transition ease duration-300 xs:mx-2">Contact</Link>
         <Link href='/blog' className="mx-4 font-sm hover:text-dark dark:hover:text-light transition ease duration-300 xs:mx-2">Blog</Link>
+        <Link href='/contact' className="mx-4 font-sm hover:text-dark dark:hover:text-light transition ease duration-300 xs:mx-2">Contact</Link>
       </motion.nav>
 
       {/* Mobile */}
@@ -43,8 +43,8 @@ function Navbar({ }: Props) {
             <CustomMobileLink href='/' title='Home' className='' toggle={toggleMenu} />
             <CustomMobileLink href='/about' title='About' className='' toggle={toggleMenu} />
             <CustomMobileLink href='/projects' title='Projects' className='' toggle={toggleMenu} />
-            <CustomMobileLink href='/contact' title='Contact' className='' toggle={toggleMenu} />
             <CustomMobileLink href='/blog' title='Blog' className='' toggle={toggleMenu} />
+            <CustomMobileLink href='/contact' title='Contact' className='' toggle={toggleMenu} />
           </motion.nav>
         )
       }

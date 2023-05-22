@@ -19,21 +19,21 @@ function ContactPage() {
           name='LinkedIn'
           href="https://www.linkedin.com/in/nhthieu16/"
         >
-          <LinkedInIcon className="fill-dark dark:fill-light"/>
+          <LinkedInIcon className="fill-dark dark:fill-light w-6 h-6"/>
         </ContactItem>
         <ContactItem
           className='col-span-1'
           name='Email'
-          href="mailto:nhthieu0106@gmail.com"
+          href="mailto:nguyenhotrunghieu0106@gmail.com"
         >
-          <MailIcon className="fill-dark dark:fill-light"/>
+          <MailIcon className="fill-dark dark:fill-light w-6 h-6"/>
         </ContactItem>
         <ContactItem
           className='col-span-1'
           name='Github'
           href="https://www.github.com/nhthieu"
         >
-          <GithubIcon className="fill-dark dark:fill-light"/>
+          <GithubIcon className="fill-dark dark:fill-light w-6 h-6"/>
         </ContactItem>
       </div>
     </div>

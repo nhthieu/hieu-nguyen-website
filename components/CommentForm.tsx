@@ -115,18 +115,7 @@ function CommentForm({ user, slug }: Props) {
           Comment
         </button>
       </form>
-      <ToastContainer
-        // position="top-right"
-        // autoClose={3000}
-        // hideProgressBar={false}
-        // newestOnTop={false}
-        // closeOnClick
-        // rtl={false}
-        // pauseOnFocusLoss
-        // draggable
-        // pauseOnHover
-        // theme="colored"
-      />
+      <ToastContainer />
     </div>
   )
 }

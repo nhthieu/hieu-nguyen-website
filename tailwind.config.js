@@ -17,8 +17,8 @@ module.exports = {
       colors: {
         dark: '#121212',
         light: '#f5f5f5',
-        primary: '#f8ca0e',
-        // primaryDark: '#f8ca0e'
+        primary: '#6b35e8',
+        primaryDark: '#f8ca0e'
       },
       keyframes: {
         signatureAnimate: {

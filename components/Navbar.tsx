@@ -22,8 +22,8 @@ function Navbar({ }: Props) {
       </button>
 
       <motion.nav
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1,}}
         transition={{ duration: 1 }}
         className="flex items-center justify-between mb-32 text-md text-dark/75 dark:text-light/75 uppercase tracking-[1px] md:hidden md:text-base md:mb-28 sm:text-sm"
       >

@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className='w-full h-screen flex flex-col items-center justify-center bg-customLinearLight dark:bg-customLinearDark xs:px-4 md:px-12 sm:px-8'>
       {/* <OpeningEffect /> */}
-      <FloatingParticles />
+      {/* <FloatingParticles /> */}
       <SideBar />
       <Navbar />
       <section id='hero'>

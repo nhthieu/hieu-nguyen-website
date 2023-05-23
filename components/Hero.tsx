@@ -8,10 +8,10 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import heroPic from "../public/images/astronaut.jpg";
 
 function Hero() {
-  const [text, helper] = useTypewriter({
-    words: ["Hi, I'm Hieu Nguyen", "IT-Student.md", "<Developer />", "Cats-lover.tsx"],
-    loop: true,
-  })
+  // const [text, helper] = useTypewriter({
+  //   words: ["Hi, I'm Hieu Nguyen", "IT-Student.md", "<Developer />", "Cats-lover.tsx"],
+  //   loop: true,
+  // })
 
   return (
     <div className="h-full flex flex-col items-center text-center">
@@ -34,8 +34,8 @@ function Hero() {
         transition={{ duration: 1.5 }}
         className="font-semibold text-6xl mt-16 xs:text-2xl md:text-4xl sm:text-3xl"
       >
-        <span className="mr-3 xs:mr-1">{text}</span>
-        <Cursor />
+        <span className="">Hi, I&apos;m Hieu Nguyen</span>
+        {/* <Cursor /> */}
       </motion.h1>
       
       <motion.div

@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className='w-full min-h-screen pb-16'>
+    <div className='w-full min-h-screen pb-32'>
       <ThemeSwitcher />
       <BackToTop />
       <section id="projects" className="max-w-4xl mx-auto">

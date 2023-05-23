@@ -15,7 +15,7 @@ function BlogPage({ }: Props) {
   const posts = getPosts();
 
   return (
-    <div className='w-full pb-48 '>
+    <div className='w-full pb-32'>
       <ThemeSwitcher />
       <BackToTop />
       <section id="blog" className='max-w-4xl mx-auto'>

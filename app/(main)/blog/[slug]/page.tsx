@@ -48,7 +48,7 @@ function BlogContentPage({ params }: Props) {
   const post = getPostContent(slug);
 
   return (
-    <div className='w-full pb-48'>
+    <div className='w-full pb-32'>
       <ThemeSwitcher />
       <BackToTop />
       <div className="max-w-4xl mx-auto">
@@ -68,7 +68,7 @@ function BlogContentPage({ params }: Props) {
           </p>
         </article>
 
-        <CommentSection slug={slug} className="mt-16" />
+        {/* <CommentSection slug={slug} className="mt-16" /> */}
         {/* <Comments className="mt-16"/> */}
         
       </div>

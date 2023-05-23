@@ -18,21 +18,22 @@ export const metadata = {
 
 function AboutPage() {
   return (
-    <div className='w-full pb-16'>
+    <div className='w-full pb-32'>
       <ThemeSwitcher />
       <BackToTop />
       <section id="about" className="max-w-4xl mx-auto flex flex-col items-center justify-center xl:flex-col xl:items-center xl:justify-center">
-        {/* Title */}
+        {/* Profile Picture */}
         <div className="flex items-center justify-center w-full mb-16">
           <Image src={profilePic} alt='My Profile Picture' priority className='w-40 h-40 flex-shrink-0 border border-dark dark:border-light object-cover grayscale rounded-full' />
         </div>
+        {/* Introduction */}
         <div className="flex flex-col items-center mb-16">
           <h1 className="text-5xl capitalize font-bold mb-2 lg:text-4xl sm:text-3xl xs:text-2xl">Hieu Nguyen</h1>
           <p className="text-xl font-medium text-dark/75 dark:text-light/75 sm:text-lg xs:text-base">{title}</p>
         </div>
 
         {/* Details */}
-        <div className="flex flex-col items-start justify-start mb-16 w-full">
+        <div className="flex flex-col items-start justify-start w-full">
           <div className="mb-4 relative">
             <h1 className="font-medium text-lg md:text-base text-dark/75 dark:text-light/75 uppercase">About me</h1>
             <div className="h-[1px] w-full absolute bottom-0 left-0 bg-dark dark:bg-light" />

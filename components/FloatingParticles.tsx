@@ -30,7 +30,7 @@ function FloatingParticles({ }: Props) {
           },
           move: {
             enable: true,
-            speed: 2,
+            speed: 1,
             direction: "none",
             random: true,
             outModes: {
@@ -52,7 +52,7 @@ function FloatingParticles({ }: Props) {
             type: "circle",
           },
           size: {
-            value: { min: 1, max: 4 },
+            value: { min: 1, max: 3 },
           },
         },
         detectRetina: true,

@@ -18,17 +18,16 @@ export const metadata = {
 
 function AboutPage() {
   return (
-    <div className='w-full flex flex-col items-center justify-between pb-16 xl:px-0'>
+    <div className='w-full pb-16'>
       <ThemeSwitcher />
       <BackToTop />
-
-      <section id="about" className="w-[65%] xl:w-full flex flex-col items-center justify-center xl:flex-col xl:items-center xl:justify-center">
+      <section id="about" className="max-w-4xl mx-auto flex flex-col items-center justify-center xl:flex-col xl:items-center xl:justify-center">
         {/* Title */}
         <div className="flex items-center justify-center w-full mb-16">
           <Image src={profilePic} alt='My Profile Picture' priority className='w-40 h-40 flex-shrink-0 border border-dark dark:border-light object-cover grayscale rounded-full' />
         </div>
         <div className="flex flex-col items-center mb-16">
-          <h1 className="text-5xl capitalize font-bold mb-2 2xl:text-4xl sm:text-3xl xs:text-2xl">Hieu Nguyen</h1>
+          <h1 className="text-5xl capitalize font-bold mb-2 lg:text-4xl sm:text-3xl xs:text-2xl">Hieu Nguyen</h1>
           <p className="text-xl font-medium text-dark/75 dark:text-light/75 sm:text-lg xs:text-base">{title}</p>
         </div>
 
@@ -79,9 +78,9 @@ function AboutPage() {
               <h1 className="font-medium text-lg text-dark/75 dark:text-light/75 uppercase md:text-base">I love</h1>
               <div className="h-[1px] w-full absolute bottom-0 left-0 bg-dark dark:bg-light" />
             </div>
-            <div className="">
-              <div className="text-lg mb-8 md:text-base xs:text-sm">
-                <p className="font-medium">Programming,&nbsp;&nbsp;Computer Systems,&nbsp;&nbsp;Music,&nbsp;&nbsp;Anime,&nbsp;&nbsp;Playing Guitar,&nbsp;&nbsp;Photography</p>
+            <div className="w-full">
+              <div className="text-lg mb-8 md:text-base xs:text-sm w-full">
+                <p className="font-medium w-full">Programming,&nbsp;&nbsp;Computer Systems,&nbsp;&nbsp;Music,&nbsp;&nbsp;Playing Guitar,&nbsp;&nbsp;Anime,&nbsp;&nbsp;Photography</p>
               </div>
             </div>
           </div>

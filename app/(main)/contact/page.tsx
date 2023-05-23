@@ -13,7 +13,7 @@ function ContactPage() {
     <div className='w-full pb-48'>
       <ThemeSwitcher />
       <BackToTop />
-      <div className="grid grid-cols-3 gap-8 2xl:grid-cols-2 md:grid-cols-1">
+      <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 2xl:grid-cols-2 md:grid-cols-1">
         <ContactItem
           className='col-span-1'
           name='LinkedIn'

@@ -51,7 +51,7 @@ function BlogContentPage({ params }: Props) {
     <div className='w-full pb-48'>
       <ThemeSwitcher />
       <BackToTop />
-      <div className="max-w-[80%] mx-auto xl:max-w-full">
+      <div className="max-w-4xl mx-auto">
         <Link href="/blog">
           <div className="w-6">
             <ArrowBackIcon className="fill-dark/75 hover:fill-dark dark:fill-light/75 dark:hover:fill-light transition duration-300 ease-out" />

@@ -27,7 +27,7 @@ function Header({ className = "" }: Props) {
 
   return (
     <>
-      <header className={`${className} flex items-center justify-between w-screen py-6 fixed left-0 top-0 px-48 font-medium z-30 2xl:px-44 xl:px-36 lg:px-32 md:px-20 sm:px-12 xs:px-8 md:justify-start ${isScrolled ? "border-b border-solid border-light/10 backdrop-blur-md" : ""}`}>
+      <header className={`${className} w-screen py-6 fixed left-0 top-0 font-medium z-30 px-8 md:justify-start ${isScrolled ? "border-b border-solid border-light/10 backdrop-blur-md" : ""}`}>
         <button
           className='flex-col justify-center items-center hidden md:flex py-2'
           onClick={toggleMenu}>
@@ -36,17 +36,21 @@ function Header({ className = "" }: Props) {
           <span className={`bg-dark/75 dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
         </button>
 
-        <Link href="/">
-          <Logo className="w-20 md:hidden filter brightness-0 invert-1 dark:filter-none" />
-        </Link>
+        <div className="max-w-4xl flex items-center justify-between mx-auto ">
+          <div>
+            <Link href="/">
+              <Logo className="w-20 md:hidden filter brightness-0 invert-1 dark:filter-none" />
+            </Link>
+          </div>
 
-        <nav className='flex items-center justify-between text-base md:hidden' >
-          {/* <CustomLink href='/' title='Home' className='mx-4' /> */}
-          <CustomLink href='/about' title='About' className='mx-4' />
-          <CustomLink href='/projects' title='Projects' className='mx-4' />
-          <CustomLink href='/blog' title='Blog' className='mx-4' />
-          <CustomLink href='/contact' title='Contact' className='mx-4' />
-        </nav>
+          <nav className='flex items-center justify-between text-base md:hidden' >
+            {/* <CustomLink href='/' title='Home' className='mx-4' /> */}
+            <CustomLink href='/about' title='About' className='mx-4' />
+            <CustomLink href='/projects' title='Projects' className='mx-4' />
+            <CustomLink href='/blog' title='Blog' className='mx-4' />
+            <CustomLink href='/contact' title='Contact' className='mx-4' />
+          </nav>
+        </div>
       </header>
 
       {/* Mobile */}

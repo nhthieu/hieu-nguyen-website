@@ -8,7 +8,7 @@ export default function Layout({
   return (
     <>
       <Header />
-      <main className="px-48 pt-44 2xl:px-44 xl:px-36 lg:px-32 md:px-20 sm:px-12 xs:px-8 bg-light dark:bg-dark">
+      <main className="pt-44 px-8 bg-light dark:bg-dark">
         {children}
       </main>
     </>

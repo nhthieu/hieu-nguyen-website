@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className='w-full h-screen flex flex-col items-center justify-center bg-white dark:bg-black xs:px-4 md:px-12 sm:px-8'>
+    <div className='w-full h-screen flex flex-col items-center justify-center bg-light dark:bg-black xs:px-4 md:px-12 sm:px-8'>
       <FloatingParticles />
       <SideBar />
       <Navbar />

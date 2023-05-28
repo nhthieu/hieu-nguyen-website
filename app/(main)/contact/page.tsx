@@ -1,7 +1,6 @@
 import BackToTop from "@/components/BackToTop";
 import ContactItem from "@/components/ContactItem";
 import { GithubIcon, LinkedInIcon, MailIcon } from "@/components/Icons";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export const metadata = {
   title: "Hieu Nguyen - Contact",
@@ -11,7 +10,6 @@ export const metadata = {
 function ContactPage() {
   return (
     <div className='w-full pb-48'>
-      <ThemeSwitcher />
       <BackToTop />
       <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 2xl:grid-cols-2 md:grid-cols-1">
         <ContactItem

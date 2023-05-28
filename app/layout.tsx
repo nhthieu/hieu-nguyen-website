@@ -2,6 +2,7 @@ import './globals.css'
 import { Montserrat } from 'next/font/google'
 import Footer from '@/components/Footer'
 import Providers from '@/components/Providers'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -20,10 +21,11 @@ export default function RootLayout({
       <body className={`${montserrat.className} bg-light dark:bg-dark`}>
         <main className=''>
           <Providers>
+            <ThemeSwitcher />
             {children}
           </Providers>
         </main>
-        {/* <Footer className='px-40'/> */}
+        {/* <Footer className='px-40' /> */}
       </body>
     </html>
   )

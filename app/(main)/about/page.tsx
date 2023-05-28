@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import profilePic from "@/public/images/me.jpg"
-import { FacebookIcon, GithubIcon, InstagramIcon, LinkArrow, LinkedInIcon } from "@/components/Icons";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import profileData from "@/data.json"
+import { GithubIcon, LinkArrow, LinkedInIcon } from "@/components/Icons";
 import BackToTop from "@/components/BackToTop";
 
 const age = new Date().getFullYear() - 2002
@@ -15,11 +14,9 @@ export const metadata = {
   description: `Hieu Nguyen's Personal Website`,
 }
 
-
 function AboutPage() {
   return (
     <div className='w-full pb-32'>
-      <ThemeSwitcher />
       <BackToTop />
       <section id="about" className="max-w-4xl mx-auto flex flex-col items-center justify-center xl:flex-col xl:items-center xl:justify-center">
         {/* Profile Picture */}
@@ -62,11 +59,11 @@ function AboutPage() {
               <div className="h-[1px] w-full absolute bottom-0 left-0 bg-dark dark:bg-light" />
             </div>
             <div className="font-medium">
-              <div className="col-span-1 text-lg mb-8 md:text-base xs:text-sm">
+              <div className="text-lg mb-8 md:text-base xs:text-sm">
                 <p className="font-bold">2002</p>
                 <p>Born in Nha Trang, Viet Nam</p>
               </div>
-              <div className="col-span-1 text-lg md:text-base xs:text-sm">
+              <div className="text-lg md:text-base xs:text-sm">
                 <p className="font-bold">2020 - Present</p>
                 <p>Studying for Bachelor&apos;s degree in Information Technology at Ho Chi Minh University of Science (VNUHCMUS) </p>
               </div>
@@ -74,14 +71,14 @@ function AboutPage() {
           </div>
 
           {/* I love */}
-          <div className="flex flex-col items-start justify-start text-start mt-12">
+          <div className="flex flex-col items-start justify-start text-start mt-12 w-full">
             <div className="mb-4 relative">
               <h1 className="font-medium text-lg text-dark/75 dark:text-light/75 uppercase md:text-base">I love</h1>
               <div className="h-[1px] w-full absolute bottom-0 left-0 bg-dark dark:bg-light" />
             </div>
             <div className="w-full">
               <div className="text-lg mb-8 md:text-base xs:text-sm w-full">
-                <p className="font-medium w-full">Programming,&nbsp;&nbsp;Computer Systems,&nbsp;&nbsp;Music,&nbsp;&nbsp;Playing Guitar,&nbsp;&nbsp;Anime,&nbsp;&nbsp;Photography</p>
+                <p className="font-medium w-full">Programming, Computer Systems, DevOps, Music, Playing Guitar, Anime, Photography</p>
               </div>
             </div>
           </div>
@@ -111,24 +108,27 @@ function AboutPage() {
                 </div>
                 <p className="font-bold">@nhthieu</p>
               </Link>
-              <Link
-                href="https://www.instagram.com/nht.hieu/"
-                target="blank"
-                className="my-4 flex items-center">
-                <div className="flex items-center justify-center w-6 md:w-4 mr-3">
-                  <InstagramIcon className="w-full fill-dark dark:fill-light" />
-                </div>
-                <p className="font-bold">@hieu0106</p>
-              </Link>
-              <Link
-                href="https://www.facebook.com/hieu0106/"
-                target="blank"
-                className="my-4 flex items-center">
-                <div className="flex items-center justify-center w-6 md:w-4 mr-3">
-                  <FacebookIcon className="w-full fill-dark dark:fill-light" />
-                </div>
-                <p className="font-bold">@hieu0106</p>
-              </Link>
+            </div>
+          </div>
+
+          {/* I have worked with */}
+          <div className="flex flex-col items-start justify-start text-start mt-8">
+            <div className="mb-4 relative">
+              <h1 className="font-medium text-lg text-dark/75 dark:text-light/75 uppercase md:text-base">My skills</h1>
+              <div className="h-[1px] w-full absolute bottom-0 left-0 bg-dark dark:bg-light" />
+            </div>
+            <div className="w-full flex items-center flex-wrap mt-2">
+              {
+                profileData.skills.map((skill, index) => (
+                  <a key={skill.name} href={skill.link} target="blank"
+                    className="mr-4 flex items-center space-x-2 mb-2">
+                    <div className="">
+                      <Image src={skill.image} alt="skill icon" width={500} height={500}
+                        className="w-12 h-12 border border-dark/5 dark:border-light/75 object-cover bg-dark/5 dark:bg-light p-1 rounded-full md:w-10 md:h-10" />
+                    </div>
+                  </a>
+                ))
+              }
             </div>
           </div>
         </div>

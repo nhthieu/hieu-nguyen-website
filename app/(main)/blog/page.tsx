@@ -1,6 +1,5 @@
 import BackToTop from '@/components/BackToTop';
 import BlogItem from '@/components/BlogItem'
-import ThemeSwitcher from '@/components/ThemeSwitcher';
 import getPosts from '@/lib/getPosts';
 import React from 'react'
 
@@ -16,7 +15,6 @@ function BlogPage({ }: Props) {
 
   return (
     <div className='w-full pb-32'>
-      <ThemeSwitcher />
       <BackToTop />
       <section id="blog" className='max-w-4xl mx-auto'>
         <div className="w-full flex flex-col items-center border-b border-solid border-dark/10 dark:border-light/10 pb-16 md:text-center">

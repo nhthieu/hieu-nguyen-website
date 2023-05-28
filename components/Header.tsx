@@ -45,10 +45,10 @@ function Header({ className = "" }: Props) {
 
           <nav className='flex items-center justify-between text-base md:hidden' >
             {/* <CustomLink href='/' title='Home' className='mx-4' /> */}
-            <CustomLink href='/about' title='About' className='mx-4' />
-            <CustomLink href='/projects' title='Projects' className='mx-4' />
-            <CustomLink href='/blog' title='Blog' className='mx-4' />
-            <CustomLink href='/contact' title='Contact' className='mx-4' />
+            <CustomLink href='/about' title='About' className='mx-3' />
+            <CustomLink href='/projects' title='Projects' className='mx-3' />
+            <CustomLink href='/blog' title='Blog' className='mx-3' />
+            <CustomLink href='/contact' title='Contact' className='mx-3' />
           </nav>
         </div>
       </header>

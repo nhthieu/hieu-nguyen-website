@@ -4,14 +4,13 @@
   date: "2023-05-29"
 ---
 
-Thanks for tuning in! This is an update to my previous blog post [About The Website](/blog/about-the-website).This time, I will be explaining all the details on how I implemented the comment section for the blogs, what technologies I used and why I chose them, with some code snippets here and there. This will be a long one, so grab a cup of coffee and let's get started!
+Thanks for tuning in! This is an update to my previous blog post [About The Website](/blog/about-the-website). This time, I will be explaining all the details on how I implemented the comment section for the blogs, what technologies I used and why I chose them, with some code snippets here and there. This will be a long one, so grab a cup of coffee and let's get started!
 
 ## The problem
 
 As I mentioned in [my previous blog](/blog/about-the-website) that I wanted to add a comment section at the end of the blogs. This is a pretty common feature that you'll probably find everywhere nowadays and personally, I think it's a great way for the readers to be able to interact and share their thoughts with the author, also for not letting the blog posts become a one-way communication. I have read plenty of articles regarding this feature and found that there are a few ways to implement it:
 
 - [ ] **Implement the backend from scratch:** Since I need somewhere to store the comments and also to query them later, I need to have a backend for this. I can use any backend framework that I'm familiar with, such as **Express.js**. However, this is not a very good option since it will take time to build and maintain the server, not to mention database configurations, concurrency issues, security issues, hosting costs, and all that good stuff. I'm not saying that this is a bad option, but I just don't think it's worth the time and effort for a simple feature like this. Also, even if I did decide to build it myself, it would not be as good and secure as the ones that are already out there.
-
 
 - [ ] **Using a BaaS (Backend as a Service):** This is probably the easiest option to go for since I don't have to worry about all the jargon that I mentioned above. As the legendary [Fireship](https://www.youtube.com/@Fireship) once said: "I'm all about that Baas, 'bout that Baas, 'bout that Firebase, NoSQL" :v. For those who are not familiar with this term, in a nutshell, it's a cloud service model in which developers outsource all the behind-the-scenes aspects of a web or mobile application so that they only have to write and maintain the frontend. Sounds like a perfect option for me because honestly I'm too lazy to build a proper backend. Out of all the BaaS providers out there, I decided to go with [Firebase](https://firebase.google.com) since it's probably the most straightforward and beginner-friendly, plus its free tier is very generous with 20k writes/deletion and 50k reads per day. One downside is that I have to use a NoSQL database. Coming from a relational database background, this is a new concept for me and it took me some time to get used to. However, I think it's a good thing since I can learn something new along the way.
 
@@ -68,7 +67,6 @@ Now, I can import these variables anywhere in my project and use them to interac
 As the name suggests, Authentication is used to authenticate users and Firestore is used to store data. I'm going to use both of these services in my project, so I need to enable them in the Firebase console. I'm going to use Google authentication for this project since it's the easiest to set up and it's also the most common one. 
 
 ![authentication](/images/blogs/how-i-built-the-comment-section/1.png "Authentication")
-
 
 After enabling the authentication method, start a new collection in the **Firestore** app, named it `blog-comments` (or whatever you prefer) and add a new document to it. The document ID will be auto-generated, and the document will have the following fields:
 
@@ -188,8 +186,11 @@ import { db } from "@/lib/firebase";
 import Image from "next/image";
 import defaultImage from "@/public/images/astronaut.jpg"
 import ReCAPTCHA from "react-google-recaptcha";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+type Props = {
+  user: User;
+  slug: string;
+}
 
 function CommentForm({ user, slug }: Props) {
   return (
@@ -224,7 +225,6 @@ function CommentForm({ user, slug }: Props) {
           {sending ? "Sending..." : "Comment"}
         </button>
       </form>
-      <ToastContainer />
     </div>
   )
 }
@@ -298,7 +298,7 @@ type Props = {
 const batch = 10;
 
 function CommentList({ slug }: Props) {
-  // advanced stuff here :v
+  // other previous codes
 
   return (
     <div ref={ref}>

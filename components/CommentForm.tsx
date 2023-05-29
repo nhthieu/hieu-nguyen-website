@@ -20,17 +20,33 @@ function CommentForm({ user, slug }: Props) {
   const ref = useRef<HTMLTextAreaElement>(null);
   const recaptchaRef = createRef<ReCAPTCHA>();
   const [comment, setComment] = useState<string>("");
-  // const [sending, setSending] = useState<boolean>(false);
-  const notify = (msg: string) => toast.info(msg, {
-    position: "top-right",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: false,
-    progress: undefined,
-    theme: "colored",
-  });
+  const [sending, setSending] = useState<boolean>(false);
+  const notify = (msg: string, err = false) => {
+    if (err) {
+      toast.error(msg, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+      });
+    } else {
+      toast.success(msg, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (comment.trim() === '') return;
@@ -45,22 +61,28 @@ function CommentForm({ user, slug }: Props) {
     if (ref.current) {
       ref.current.style.height = 'auto';
     }
-    // setSending(true);
-    await addDoc(commentsRef, {
-      name: user.displayName,
-      comment,
-      slug,
-      createdAt: serverTimestamp(),
-      photoURL: user.photoURL,
-      uid: user.uid,
-      email: user.email,
-      verified: false,
-      replies: []
-    })
-    setComment("");
-    // setSending(false);
-    recaptchaRef.current?.reset();
-    notify("Comment submitted for review!");
+    setSending(true);
+    try {
+      await addDoc(commentsRef, {
+        name: user.displayName,
+        comment,
+        slug,
+        createdAt: serverTimestamp(),
+        photoURL: user.photoURL,
+        uid: user.uid,
+        email: user.email,
+        verified: false,
+        replies: []
+      })
+      notify("Comment submitted for review!");
+    } catch (err: any) {
+      console.log(err);
+      notify("Something went wrong", true);
+    } finally {
+      setComment("");
+      setSending(false);
+      recaptchaRef.current?.reset();
+    }
   }
 
   // auto resize input
@@ -111,7 +133,7 @@ function CommentForm({ user, slug }: Props) {
           disabled={comment.trim() === ""}
           type="submit"
           className={`self-end py-2 px-4 text-light dark:text-dark rounded-xl mt-4 md:text-sm md:py-1 md:px-3 ${comment.trim() === "" ? "bg-dark/25 dark:bg-light/25" : "bg-dark opacity-90 dark:bg-light hover:opacity-100"}`}>
-          Comment
+          {sending ? "Sending..." : "Comment"}
         </button>
       </form>
       <ToastContainer />

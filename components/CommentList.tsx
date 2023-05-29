@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react'
 import CommentItem from './CommentItem'
 import { db } from '@/lib/firebase';
-import { collection, onSnapshot, query, where, orderBy, limit, getDocs, startAfter, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
+import { collection, onSnapshot, query, where, orderBy, limit, getDocs, startAfter, QueryDocumentSnapshot, DocumentData, getDocsFromCache } from 'firebase/firestore';
 import { LoadingIcon } from './Icons';
 import { useInView } from 'framer-motion';
 
@@ -19,6 +19,7 @@ function CommentList({ slug }: Props) {
   const isInView = useInView(ref, { once: true });
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
   const [loadingComments, setLoadingComments] = useState<boolean>(true);
+  const [isShowLoadMoreButton, setIsShowLoadMoreButton] = useState<boolean>(false);
   const [lastVisible, setLastVisible] = useState<QueryDocumentSnapshot<DocumentData>>({} as QueryDocumentSnapshot<DocumentData>);
 
   // init load
@@ -28,22 +29,26 @@ function CommentList({ slug }: Props) {
       const q = query(commentsRef, where('slug', '==', slug), where('verified', '==', true), orderBy('createdAt', 'desc'), limit(batch));
       const unsubsribe = onSnapshot(q,
         (snapshot) => {
-          const comments = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-          }))
+          const comments = snapshot.docs.map((doc) => {
+            doc.metadata.fromCache ? console.log('from cache') : console.log('from server');
+            return {
+              id: doc.id,
+              ...doc.data()
+            }
+          })
+          
           setLoadingComments(false);
           if (snapshot.docs.length > 0) {
             setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
+            setIsShowLoadMoreButton(snapshot.docs.length >= batch);
           }
-          console.log(comments)
           setComments(comments);
         }, (error) => {
           console.log(error);
           alert(error.message);
         })
 
-      return () => { unsubsribe(); console.log('unsubscribed') }
+      return () => { unsubsribe(); console.log('realtime listener unsubscribed') }
     }
   }, [slug, isInView]);
 
@@ -54,23 +59,33 @@ function CommentList({ slug }: Props) {
     const q = query(
       commentsRef,
       where('slug', '==', slug),
+      where('verified', '==', true),
       orderBy('createdAt', 'desc'),
       limit(batch),
-      startAfter(lastVisible));
-    const querySnapshot = await getDocs(q);
-    const comments = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data()
-    }))
-    console.log(comments);
-    if (querySnapshot.docs.length > 0) {
-      setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      startAfter(lastVisible)
+    );
+    let querySnapshot = {} as any;
+    try {
+      querySnapshot = await getDocsFromCache(q);
+      console.log('from cache')
+    } catch (err) {
+      querySnapshot = await getDocs(q);
+      console.log('from server')
+    } finally {
+      const comments = querySnapshot.docs.map((doc: DocumentData) => ({
+        id: doc.id,
+        ...doc.data()
+      }))
+      setIsShowLoadMoreButton(comments.length > 0)
+      if (querySnapshot.docs.length > 0) {
+        setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      }
+      setComments((prev) => [...prev, ...comments]);
+      setIsLoadingMore(false);
     }
-    setComments((prev) => [...prev, ...comments]);
-    setIsLoadingMore(false);
   }
 
-  const showLoadMoreButton = lastVisible && comments.length % batch === 0 && comments.length > 0;
+  const showLoadMoreButton = isShowLoadMoreButton && lastVisible;
 
   return (
     <div ref={ref}>

@@ -65,7 +65,7 @@ function BlogContentPage({ params }: Props) {
         <article className="prose-lg prose-pre:bg-dark/5 dark:prose-pre:bg-light/10 prose-pre:overflow-x-scroll prose-headings:font-bold prose-a:underline prose-a:font-medium text-dark dark:text-light lg:prose-base sm:prose-sm">
           <Markdown>{post.content}</Markdown>
           <p className="">
-            Thank you for reading this blog post. I hope you enjoyed it. If you have any questions or suggestions, feel free to leave a comment below. I&apos;m always happy to hear from you.
+            Thank you for reading this blog post. I hope you enjoyed it. If you have any questions, feel free to leave a comment below. I&apos;m always happy to hear from you.
           </p>
         </article>
 

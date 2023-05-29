@@ -62,11 +62,8 @@ function BlogContentPage({ params }: Props) {
           <h1 className="text-5xl font-bold mb-6 text-center lg:text-4xl md:text-3xl md:mb-4 sm:text-2xl capitalize">{post.data.title}</h1>
           <p className="text-dark/75 dark:text-light/75 text-lg text-center lg:text-base">{post.data.date}</p>
         </div>
-        <article className="prose-lg prose-pre:bg-dark/5 dark:prose-pre:bg-light/10 prose-pre:overflow-x-scroll prose-headings:font-bold prose-a:underline prose-a:font-medium text-dark dark:text-light lg:prose-base sm:prose-sm">
+        <article className="prose-lg prose-pre:bg-dark/5 dark:prose-pre:bg-light/10 prose-pre:overflow-x-scroll prose-headings:font-bold prose-a:underline prose-a:font-medium lg:prose-base sm:prose-sm prose-img:mx-auto ">
           <Markdown>{post.content}</Markdown>
-          <p className="">
-            Thank you for reading this blog post. I hope you enjoyed it. If you have any questions, feel free to leave a comment below. I&apos;m always happy to hear from you.
-          </p>
         </article>
 
         <CommentSection slug={slug} className="mt-16" />

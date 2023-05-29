@@ -3,13 +3,12 @@
 import { User } from "firebase/auth";
 import { useEffect, useState, useRef, createRef } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "@/firebase";
+import { db } from "@/lib/firebase";
 import Image from "next/image";
 import defaultImage from "@/public/images/astronaut4.jpg"
 import ReCAPTCHA from "react-google-recaptcha";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 type Props = {
   user: User;

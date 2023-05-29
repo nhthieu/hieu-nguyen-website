@@ -1,9 +1,8 @@
 "use client";
 
-import { auth, provider } from "@/firebase"
+import { auth, provider } from "@/lib/firebase"
 import { setPersistence, signInWithPopup, browserSessionPersistence, User, onAuthStateChanged } from "firebase/auth"
 import { useEffect } from "react";
-
 
 type Props = {
   setUser: React.Dispatch<React.SetStateAction<User | null>>

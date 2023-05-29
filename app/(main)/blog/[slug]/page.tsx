@@ -1,14 +1,15 @@
 
+import Link from "next/link";
 import Markdown from "markdown-to-jsx"
 import matter from "gray-matter"
 import fs from "fs";
+
 import getPosts from "@/lib/getPosts";
-import Link from "next/link";
 import { ArrowBackIcon } from "@/components/Icons";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import BackToTop from "@/components/BackToTop";
 import CommentSection from "@/components/CommentSection";
-import Comments from "@/components/Comments";
+// import Comments from "@/components/Comments";
 
 export async function generateStaticParams() {
   const posts = getPosts();
@@ -64,11 +65,11 @@ function BlogContentPage({ params }: Props) {
         <article className="prose-lg prose-pre:bg-dark/5 dark:prose-pre:bg-light/10 prose-pre:overflow-x-scroll prose-headings:font-bold prose-a:underline prose-a:font-medium text-dark dark:text-light lg:prose-base sm:prose-sm">
           <Markdown>{post.content}</Markdown>
           <p className="">
-            Thank you for reading this blog post. I hope you enjoyed it. If you have any questions or suggestions, feel free to contact me via email or any of my social media accounts. I&apos;m always happy to hear from you.
+            Thank you for reading this blog post. I hope you enjoyed it. If you have any questions or suggestions, feel free to leave a comment below. I&apos;m always happy to hear from you.
           </p>
         </article>
 
-        {/* <CommentSection slug={slug} className="mt-16" /> */}
+        <CommentSection slug={slug} className="mt-16" />
         {/* <Comments className="mt-16"/> */}
         
       </div>

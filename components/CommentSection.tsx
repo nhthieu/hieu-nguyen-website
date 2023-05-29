@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import CommentForm from './CommentForm'
+import dynamic from "next/dynamic";
+import { useState } from 'react';
+import { User } from 'firebase/auth';
+
 import CommentList from './CommentList';
 import Auth from './Auth';
-import { auth } from '@/firebase';
-import { User } from 'firebase/auth';
+import { auth } from '@/lib/firebase';
+const CommentForm = dynamic(() => import('./CommentForm'), { ssr: false })
 
 type Props = {
   slug: string;

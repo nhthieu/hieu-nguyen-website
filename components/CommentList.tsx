@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import CommentItem from './CommentItem'
-import { db } from '@/firebase';
+import { db } from '@/lib/firebase';
 import { collection, onSnapshot, query, where, orderBy, limit, getDocs, startAfter, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
 import { LoadingIcon } from './Icons';
 import { useInView } from 'framer-motion';

@@ -69,7 +69,7 @@ function BlogContentPage({ params }: Props) {
           </p>
         </article>
 
-        {/* <CommentSection slug={slug} className="mt-16" /> */}
+        <CommentSection slug={slug} className="mt-16" />
         {/* <Comments className="mt-16"/> */}
         
       </div>

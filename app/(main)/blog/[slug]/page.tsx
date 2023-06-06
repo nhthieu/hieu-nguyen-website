@@ -9,7 +9,6 @@ import { ArrowBackIcon } from "@/components/Icons";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import BackToTop from "@/components/BackToTop";
 import CommentSection from "@/components/CommentSection";
-// import Comments from "@/components/Comments";
 
 export async function generateStaticParams() {
   const posts = getPosts();
@@ -66,9 +65,7 @@ function BlogContentPage({ params }: Props) {
           <Markdown>{post.content}</Markdown>
         </article>
 
-        <CommentSection slug={slug} className="mt-16" />
-        {/* <Comments className="mt-16"/> */}
-        
+        <CommentSection slug={slug} className="mt-16" /> 
       </div>
     </div>
   )

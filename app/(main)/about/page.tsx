@@ -45,7 +45,7 @@ function AboutPage() {
             <Link
               href='/cv.pdf'
               target='_blank'
-              download={true}
+              // download={true}
               className='flex items-center dark:bg-light dark:text-dark p-2.5 px-6 rounded-lg text-lg font-semibold border-2 border-solid border-transparent dark:hover:border-light dark:hover:bg-dark dark:hover:text-light transition ease duration-300 md:px-4 md:text-base xs:text-sm bg-dark text-light hover:border-dark hover:bg-light hover:text-dark'>
               Resume
               <LinkArrow className='w-6 ml-2 md:hidden' />

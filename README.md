@@ -1,11 +1,8 @@
 # Hieu Nguyen's Personal Website
 
 ## Note
-I just migrated the website to Astro, you can visit it [here](https://hieunguyen.vercel.app/). I don't actively use this website anymore but if you still want to [visit](https://nhthieu.vercel.app/), feel free to.
 
-## Introduction
-
-Hi, this is my personal website to showcase my profile and my projects. I sometimes write tech and non-tech related blogs on the website too.
+I just migrated the website to Astro, you can visit the new website [here](https://hieunguyen.vercel.app/). For the Github repo, visit [here](https://github.com/nhthieu/my-portfolio). I don't actively use this website anymore but if you still want to [visit](https://nhthieu.vercel.app/), feel free to.
 
 ### Some of the key features include:
 - Built with NextJS and styled with TailwindCSS

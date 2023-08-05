@@ -1,7 +1,8 @@
 # Hieu Nguyen's Personal Website
 
 ## Note
-I just migrated the website to Astro, you can visit it [here](https://hieunguyen.vercel.app/). I don't actively use this website anymore but if you still want to [visit](https://nhthieu.vercel.app/), feel free to.
+
+I just migrated the website to Astro and don't actively use this website anymore. You can visit the new repo [here](https://github.com/nhthieu/nhthieu.github.io)
 
 ## Introduction
 
